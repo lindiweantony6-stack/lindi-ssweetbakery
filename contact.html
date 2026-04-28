@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       Lindi's Sweet Bakes — Contact (contact.html)
+       Student: Lindiwe Mthethwa | ST10129141
+       Module: WEDE5020
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find Lindi's Sweet Bakes in Pretoria. Visit us at Arcadia or the Hatfield Farmers Market. Contact us by phone, email, or fill in our contact form." />
+  <title>Find Us | Lindi's Sweet Bakes</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SITE HEADER & NAVIGATION
+       ============================================================ -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+
+      <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
+        <span class="nav__logo-icon" aria-hidden="true">🍰</span>
+        <span class="nav__logo-text">
+          Lindi's Sweet Bakes
+          <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
+        </span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main>
+
+    <!-- --------------------------------------------------------
+         PAGE HERO
+    -------------------------------------------------------- -->
+    <section class="page-hero" aria-label="Page header">
+      <h1>Find Us</h1>
+      <p>Two convenient locations across Pretoria — or reach us online</p>
+    </section>
+
+    <!-- --------------------------------------------------------
+         LOCATION CARDS
+         Two location cards side-by-side with map placeholders
+    -------------------------------------------------------- -->
+    <section class="section">
+      <div class="container">
+
+        <p class="section-subtitle">Where to Find Us</p>
+        <h2 class="section-title">Our Locations</h2>
+        <div class="divider"></div>
+
+        <div class="contact-grid">
+
+          <!-- Location 1: Main Bakery, Arcadia -->
+          <article class="location-card" aria-label="Main bakery location">
+
+            <!-- Card header -->
+            <div class="location-card__header">
+              <span class="loc-icon" aria-hidden="true">📍</span>
+              <h3>Main Bakery — Arcadia</h3>
+            </div>
+
+            <!-- Card body with address, hours, phone -->
+            <div class="location-card__body">
+
+              <div class="location-detail">
+                <span aria-hidden="true">🏠</span>
+                <div>
+                  <strong>Address</strong><br />
+                  12 Honey Lane, Arcadia<br />
+                  Pretoria, 0083
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <span aria-hidden="true">🕐</span>
+                <div>
+                  <strong>Trading Hours</strong><br />
+                  Monday – Saturday: 06:00 – 18:00<br />
+                  Sunday: Closed
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <span aria-hidden="true">📞</span>
+                <div>
+                  <strong>Telephone</strong><br />
+                  <a href="tel:+27120000000" style="color: var(--golden-honey);">012 000 0000</a>
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <span aria-hidden="true">✉️</span>
+                <div>
+                  <strong>Email</strong><br />
+                  <a href="mailto:hello@lindissweetbakes.co.za" style="color: var(--golden-honey);">hello@lindissweetbakes.co.za</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Map placeholder — replace with Google Maps embed iframe in production -->
+            <div class="map-placeholder" aria-label="Map placeholder for Arcadia location">
+              🗺️
+              <small>12 Honey Lane, Arcadia, Pretoria</small>
+              <!-- 
+                NOTE FOR DEVELOPER:
+                Replace this div with a Google Maps embed iframe, e.g.:
+                <iframe
+                  src="https://www.google.com/maps/embed?..."
+                  width="100%" height="180" style="border:0;"
+                  allowfullscreen loading="lazy">
+                </iframe>
+              -->
+            </div>
+
+          </article>
+
+          <!-- Location 2: Hatfield Farmers Market satellite stall -->
+          <article class="location-card" aria-label="Hatfield Farmers Market stall location">
+
+            <div class="location-card__header">
+              <span class="loc-icon" aria-hidden="true">🌿</span>
+              <h3>Satellite Stall — Hatfield Market</h3>
+            </div>
+
+            <div class="location-card__body">
+
+              <div class="location-detail">
+                <span aria-hidden="true">🏪</span>
+                <div>
+                  <strong>Location</strong><br />
+                  Hatfield Farmers Market<br />
+                  Burnett Street, Hatfield<br />
+                  Pretoria, 0083
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <span aria-hidden="true">🕐</span>
+                <div>
+                  <strong>Market Hours</strong><br />
+                  Saturdays: 07:00 – 13:00<br />
+                  (Weather permitting)
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <span aria-hidden="true">🛍️</span>
+                <div>
+                  <strong>Available Products</strong><br />
+                  Sourdough loaves, vetkoek, croissants, cupcakes, brownies, cookies, and seasonal specials.
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <span aria-hidden="true">ℹ️</span>
+                <div>
+                  <strong>Note</strong><br />
+                  Pre-orders available for market collection. Contact us by Thursday.
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Map placeholder for Hatfield -->
+            <div class="map-placeholder" aria-label="Map placeholder for Hatfield Farmers Market">
+              🗺️
+              <small>Burnett Street, Hatfield, Pretoria</small>
+              <!-- 
+                NOTE FOR DEVELOPER:
+                Replace this div with a Google Maps embed iframe for the Hatfield location.
+              -->
+            </div>
+
+          </article>
+
+        </div>
+        <!-- END contact-grid -->
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------
+         CONTACT FORM
+         General enquiry / message form
+    -------------------------------------------------------- -->
+    <section class="section section--beige">
+      <div class="container">
+
+        <p class="section-subtitle">Get in Touch</p>
+        <h2 class="section-title">Send Us a Message</h2>
+        <div class="divider"></div>
+
+        <!-- Centred form card -->
+        <div class="contact-form-section">
+
+          <p style="margin-bottom: 2rem; font-size:0.95rem; opacity:0.85;">
+            Have a question, want to learn more about our products, or need directions? Send us a message and we'll get back to you as soon as possible.
+          </p>
+
+          <!-- Form — validation handled by script.js -->
+          <form id="contact-form" novalidate aria-label="General contact form">
+
+            <!-- Row 1: Name + Email -->
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="contact-name">Your Name <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="contact-name"
+                  placeholder="e.g. Sipho Dlamini"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="contact-email"
+                  placeholder="e.g. sipho@email.com"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+
+            </div>
+
+            <!-- Subject field -->
+            <div class="form-group">
+              <label for="contact-subject">Subject <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="contact-subject"
+                name="contact-subject"
+                placeholder="e.g. Question about custom orders"
+                required
+                aria-required="true"
+              />
+              <span class="form-error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Message field -->
+            <div class="form-group">
+              <label for="contact-message">Message <span class="required" aria-hidden="true">*</span></label>
+              <textarea
+                id="contact-message"
+                name="contact-message"
+                placeholder="Type your message here..."
+                required
+                aria-required="true"
+              ></textarea>
+              <span class="form-error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn--primary" style="width:100%; font-size:1rem; padding:1rem;">
+              Send Message
+            </button>
+
+            <!-- Success message — displayed by JS after valid submission -->
+            <div id="contact-success" class="form-success" role="alert" aria-live="polite">
+              ✅ Thank you for your message! We will respond within 24 hours on business days.
+            </div>
+
+          </form>
+        </div>
+        <!-- END contact-form-section -->
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------
+         QUICK CONTACT INFO STRIP
+    -------------------------------------------------------- -->
+    <section class="section">
+      <div class="container">
+
+        <div class="features-grid">
+
+          <div class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">📞</div>
+            <h3>Call Us</h3>
+            <p>012 000 0000</p>
+            <p style="font-size:0.88rem; opacity:0.75;">Mon–Sat, 06:00 – 17:00</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">✉️</div>
+            <h3>Email Us</h3>
+            <p><a href="mailto:hello@lindissweetbakes.co.za" style="color:var(--golden-honey);">hello@lindissweetbakes.co.za</a></p>
+            <p style="font-size:0.88rem; opacity:0.75;">Replies within 24 hours</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">📸</div>
+            <h3>Follow Us</h3>
+            <p>
+              <a href="#" style="color:var(--golden-honey);">@lindissweetbakes</a>
+            </p>
+            <p style="font-size:0.88rem; opacity:0.75;">Instagram &amp; Facebook</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
+          <p class="footer-brand__tagline">"To bring joy to every table."</p>
+          <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Products</h4>
+          <ul>
+            <li><a href="products.html">Custom Cakes</a></li>
+            <li><a href="products.html">Cupcakes</a></li>
+            <li><a href="products.html">Artisan Breads</a></li>
+            <li><a href="products.html">Pastries</a></li>
+            <li><a href="products.html">Cookies &amp; Brownies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-hours">
+          <h4>Trading Hours</h4>
+          <p>📍 Arcadia Bakery</p>
+          <p>Mon–Sat: 06:00 – 18:00</p>
+          <br />
+          <p>📍 Hatfield Market</p>
+          <p>Saturdays: 07:00 – 13:00</p>
+          <br />
+          <p>📞 012 000 0000</p>
+          <p>✉️ hello@lindissweetbakes.co.za</p>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript (contact form validation lives in script.js) -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
