@@ -1,2 +1,0 @@
-# lindi'ssweetbakery
-
