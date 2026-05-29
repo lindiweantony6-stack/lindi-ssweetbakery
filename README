@@ -94,68 +94,43 @@ A single external CSS file (`css/style.css`) is linked to all five HTML pages. I
 - `em` — letter-spacing values
 - `vh` — hero section minimum height
 
+### Key Achievements in Phase 2
+
+- **Responsive Design** — Website adapts to desktop, tablet, and mobile devices
+- **Visual Identity** — Implemented warm cream and golden honey colour scheme with Playfair Display typography reflecting artisan bakery branding
+- **Interactive Elements** — Added hover states and focus indicators for improved user experience
+- **Cross-browser Compatibility** — Ensured consistent appearance across Chrome, Firefox, Safari, and Edge
+- **Performance Optimisation** — Created efficient CSS with minimal redundancy using custom properties
+
+### Technical Specifications
+
+- **CSS Framework** — Custom CSS with Grid and Flexbox layouts
+- **Typography** — Google Fonts integration (Playfair Display, Lato)
+- **Responsive Breakpoints** — Four breakpoints: 1024px, 768px, 480px
+- **Browser Support** — Modern browsers with graceful degradation
+- **Code Organisation** — Modular CSS structure with clear section commenting
+
 ---
 
 ## Responsiveness Testing and Iteration Across Devices
 
-The website was tested across multiple screen sizes using Chrome DevTools (F12 → Toggle Device Toolbar). Screenshots below show the site responding correctly at each breakpoint after testing and adjustments.
+These screenshots show how the site responds on common devices after iterative testing and adjustments.
 
-### Mobile — 375 × 812px
+### Mobile
 
- Replace this line with your screenshot: `![Mobile 375px](images/responsiveness/mobile-375px.png)`
+**375 × 812px**
+![Lindi's Sweet Bakes on Mobile 375px](images/responsiveness/mobile-375px.png)
 
-Observations at this breakpoint:
-- Hamburger navigation menu replaces horizontal nav links
-- All grids collapse to a single column
-- CTA buttons stack vertically and span full width
-- Hero heading reduces to a smaller font size
-- Baker card stacks avatar above text content
+### Tablet
 
----
+| **768 × 1024px** | **1024 × 768px** |
+|---|---|
+| ![Lindi's Sweet Bakes on Tablet 768px](images/responsiveness/tablet-768px.png) | ![Lindi's Sweet Bakes on Tablet 1024px](images/responsiveness/tablet-1024px.png) |
 
-### Tablet — 768 × 1024px
+### Desktop
 
-Replace this line with your screenshot: `![Tablet 768px](images/responsiveness/tablet-768px.png)`
-
-Observations at this breakpoint:
-- Navigation switches to hamburger menu
-- Feature cards and product grid display in two columns
-- Enquiry form panel stacks (info panel moves below form)
-- Footer displays in a two-column grid
-
----
-
-### Tablet — 1024 × 768px
-
- Replace this line with your screenshot: `![Tablet 1024px](images/responsiveness/tablet-1024px.png)`
-
-Observations at this breakpoint:
-- Two-column grid layouts active
-- Horizontal navigation bar visible
-- Enquiry layout switches to single column
-- Footer changes from four columns to two columns
-
----
-
-### Desktop — 1440 × 900px
-
- Replace this line with your screenshot: `![Desktop 1440px](images/responsiveness/desktop-1440px.png)`
-
-Observations at this breakpoint:
-- Full three-column product and features grids active
-- Four-column footer grid displayed
-- Full horizontal navigation with animated underline hover effect
-- Two-column enquiry layout (info panel left, form right)
-- About story two-column layout (text left, image right)
-
----
-
-> **How to add screenshots:**
-> 1. Open your website in Chrome
-> 2. Press **F12** → click the device toolbar icon
-> 3. Set the width to each size above and take a screenshot
-> 4. Save them into `images/responsiveness/` in your repo
-> 5. Delete the `>` instruction lines above and the images will display automatically
+**1440 × 900px**
+![Lindi's Sweet Bakes on Desktop 1440px](images/responsiveness/desktop-1440px.png)
 
 ---
 
@@ -172,7 +147,7 @@ Observations at this breakpoint:
 | 5 | 2026-05-28 | Implemented CSS Flexbox for navigation, cards, form rows, and button groups | Part 2 requirement: CSS layout techniques |
 | 6 | 2026-05-28 | Added `:hover`, `:focus`, `:active` pseudo-class styles to buttons, nav links, inputs, and cards | Part 2 requirement: interactive pseudo-classes |
 | 7 | 2026-05-28 | Defined all design tokens (colours, fonts, spacing, shadows) as CSS custom properties in `:root` | Efficient cascading — one change updates the whole site |
-| 8 | 2026-05-28 | Created `images/responsiveness/` folder for device screenshots | Part 2 requirement: screenshot evidence of responsive testing |
+| 8 | 2026-05-28 | Created `images/responsiveness/` folder and added four device screenshots | Part 2 requirement: screenshot evidence of responsive testing |
 | 9 | 2026-05-28 | Updated `README.md` with Part 2 documentation, breakpoint table, responsiveness section, and changelog | Part 2 requirement: updated README |
 
 ### Part 1 — Original Submission
@@ -201,5 +176,5 @@ Observations at this breakpoint:
 
 ---
 
-*Lindi's Sweet Bakes is a fictional business created for academic purposes only.*
+*Lindi's Sweet Bakes is a fictional business created for academic purposes only.*  
 *© 2026 Lindiwe Mthethwa (ST10129141) — WEDE5020*
