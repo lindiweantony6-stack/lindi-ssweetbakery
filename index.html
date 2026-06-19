@@ -1,287 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ============================================================
-       Lindi's Sweet Bakes — Homepage (index.html)
-       Student: Lindiwe Mthethwa | ST10129141
-       Module: WEDE5020
-       ============================================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lindi's Sweet Bakes — Pretoria's artisan bakery. Handcrafted custom cakes, cupcakes, artisan breads, pastries, cookies and brownies made with love and local ingredients." />
-  <title>Lindi's Sweet Bakes | Artisan Bakery, Pretoria</title>
+<!-- ============================================================
+  Lindi's Sweet Bakes — Homepage (index.html)
+  Student: Lindiwe Mthethwa | ST10129141
+  Module: WEDE5020 — Part 3
+============================================================ -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Fonts: Playfair Display (headings) + Lato (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+<!-- SEO: Title + Meta Description -->
+<meta name="description" content="Lindi's Sweet Bakes — Pretoria's favourite artisan bakery. Handcrafted custom cakes, cupcakes, artisan breads, pastries, cookies and brownies made with love and local South African ingredients." />
+<meta name="keywords" content="artisan bakery Pretoria, custom cakes Pretoria, cupcakes Pretoria, artisan bread Pretoria, wedding cake Pretoria, birthday cake, sourdough bread, pastries, bakery Arcadia, Hatfield market bakery" />
+<meta name="author" content="Lindiwe Mthethwa" />
+<meta name="robots" content="index, follow" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+<!-- Open Graph (Social Media SEO) -->
+<meta property="og:title" content="Lindi's Sweet Bakes | Artisan Bakery, Pretoria" />
+<meta property="og:description" content="Handcrafted custom cakes, cupcakes, artisan breads and pastries made fresh daily in Pretoria, South Africa." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lindissweetbakes.co.za/" />
+<meta property="og:image" content="images/og-image.jpg" />
+<meta property="og:locale" content="en_ZA" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lindi's Sweet Bakes | Artisan Bakery, Pretoria" />
+<meta name="twitter:description" content="Handcrafted cakes, cupcakes, breads and pastries baked fresh daily in Pretoria." />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://lindissweetbakes.co.za/" />
+
+<title>Lindi's Sweet Bakes | Artisan Bakery, Pretoria — Custom Cakes &amp; Breads</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Main stylesheet -->
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       SITE HEADER & NAVIGATION
-       Sticky navigation bar — consistent across all pages
-       ============================================================ -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
+<!-- ============================================================
+  SITE HEADER & NAVIGATION
+============================================================ -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
+      <span class="nav__logo-icon" aria-hidden="true">🍰</span>
+      <span class="nav__logo-text">
+        Lindi's Sweet Bakes
+        <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
+      </span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
-      <!-- Logo -->
-      <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
-        <span class="nav__logo-icon" aria-hidden="true">🍰</span>
-        <span class="nav__logo-text">
-          Lindi's Sweet Bakes
-          <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
-        </span>
-      </a>
+<main>
 
-      <!-- Navigation links -->
-      <ul class="nav__links" role="list">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="enquiry.html">Enquiry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <!-- Mobile burger button -->
-      <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </nav>
-  </header>
-
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
-  <main>
-
-    <!-- --------------------------------------------------------
-         HERO SECTION
-         Full-width hero with headline, tagline, and CTA buttons
-    -------------------------------------------------------- -->
-    <section class="hero" aria-label="Welcome banner">
-      <div class="hero__content">
-        <!-- Small badge above headline -->
-        <span class="hero__badge">✨ Baked Fresh Daily in Pretoria</span>
-
-        <!-- Main headline -->
-        <h1 class="hero__title">
-          Handcrafted with <span>Love</span>,<br />Baked Fresh Daily
-        </h1>
-
-        <!-- Supporting tagline -->
-        <p class="hero__tagline">
-          Artisan cakes, cupcakes, breads &amp; pastries made with the finest local South African ingredients.
-        </p>
-
-        <!-- Call-to-action buttons -->
-        <div class="hero__buttons">
-          <a href="enquiry.html" class="btn btn--primary">Order Now</a>
-          <a href="products.html" class="btn btn--outline">View Products</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         FEATURED CATEGORIES
-         Three highlight cards linking to product categories
-    -------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <p class="section-subtitle">What We Bake</p>
-        <h2 class="section-title">Our Specialities</h2>
-        <div class="divider"></div>
-
-        <!-- Three feature cards for key product categories -->
-        <div class="features-grid">
-
-          <!-- Card 1: Custom Cakes -->
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🎂</div>
-            <h3>Custom Cakes</h3>
-            <p>Celebrate your special moments with a bespoke cake designed just for you — birthdays, weddings, and corporate events.</p>
-            <a href="products.html" class="btn btn--dark" style="margin-top:0.5rem;">Explore Cakes</a>
-          </div>
-
-          <!-- Card 2: Cupcakes & Pastries -->
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🧁</div>
-            <h3>Cupcakes &amp; Pastries</h3>
-            <p>Perfectly portioned treats — from delicate croissants to beautifully decorated cupcakes for any occasion.</p>
-            <a href="products.html" class="btn btn--dark" style="margin-top:0.5rem;">Explore Pastries</a>
-          </div>
-
-          <!-- Card 3: Artisan Breads -->
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🍞</div>
-            <h3>Artisan Breads</h3>
-            <p>Slow-fermented, oven-fresh artisan breads baked to golden perfection every morning — sourdough, seed loaves and more.</p>
-            <a href="products.html" class="btn btn--dark" style="margin-top:0.5rem;">Explore Breads</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         WHY CHOOSE US
-         Brief highlights of the bakery's values
-    -------------------------------------------------------- -->
-    <section class="section section--beige">
-      <div class="container">
-        <p class="section-subtitle">Why Choose Us</p>
-        <h2 class="section-title">Baked with Heart &amp; Honesty</h2>
-        <div class="divider"></div>
-
-        <div class="features-grid">
-
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🌿</div>
-            <h3>Local Ingredients</h3>
-            <p>We source the freshest produce from trusted local suppliers across Gauteng to support our community and ensure quality.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">❤️</div>
-            <h3>Made with Love</h3>
-            <p>Every loaf, cupcake, and cookie is handcrafted in small batches — never mass-produced, always made to order.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🚚</div>
-            <h3>Delivery &amp; Collection</h3>
-            <p>Order online for convenient delivery across Pretoria, or collect fresh from our bakery in Arcadia or Hatfield Farmers Market.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         TESTIMONIALS
-         Customer review strip
-    -------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <p class="section-subtitle">Happy Customers</p>
-        <h2 class="section-title">What Our Community Says</h2>
-        <div class="divider"></div>
-
-        <div class="testimonials-grid">
-
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card">
-            <div class="stars" aria-label="5 stars">★★★★★</div>
-            <p>The custom birthday cake Lindi made for my daughter was absolutely stunning and tasted even better than it looked. Will never go anywhere else!</p>
-            <span class="testimonial-card__author">— Thandiwe M., Arcadia</span>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card">
-            <div class="stars" aria-label="5 stars">★★★★★</div>
-            <p>Best sourdough bread in Pretoria, hands down. I pick up a loaf every Saturday at the Hatfield market. Absolutely delicious every single time.</p>
-            <span class="testimonial-card__author">— Pieter V., Hatfield</span>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card">
-            <div class="stars" aria-label="5 stars">★★★★★</div>
-            <p>Ordered cupcakes for our office event and they were a huge hit. Professional, prompt, and the packaging was beautiful. Highly recommended!</p>
-            <span class="testimonial-card__author">— Nomsa K., Pretoria CBD</span>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         CTA BANNER
-         Calls the visitor to place an order
-    -------------------------------------------------------- -->
-    <section class="cta-banner" aria-label="Call to action">
-      <div class="container">
-        <h2>Ready to Place a Custom Order?</h2>
-        <p>Fill in our simple enquiry form and we'll get back to you within 24 hours to discuss your order.</p>
-        <a href="enquiry.html" class="btn btn--outline">Place an Enquiry</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       SITE FOOTER
-       Consistent across all pages
-       ============================================================ -->
-  <footer class="site-footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand column -->
-        <div class="footer-brand">
-          <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
-          <p class="footer-brand__tagline">"To bring joy to every table."</p>
-          <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
-          <!-- Social links -->
-          <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="Instagram">📸</a>
-            <a href="#" class="social-link" aria-label="Facebook">📘</a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Products column -->
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li><a href="products.html">Custom Cakes</a></li>
-            <li><a href="products.html">Cupcakes</a></li>
-            <li><a href="products.html">Artisan Breads</a></li>
-            <li><a href="products.html">Pastries</a></li>
-            <li><a href="products.html">Cookies &amp; Brownies</a></li>
-          </ul>
-        </div>
-
-        <!-- Hours & Contact column -->
-        <div class="footer-col footer-hours">
-          <h4>Trading Hours</h4>
-          <p>📍 Arcadia Bakery</p>
-          <p>Mon–Sat: 06:00 – 18:00</p>
-          <br />
-          <p>📍 Hatfield Market</p>
-          <p>Saturdays: 07:00 – 13:00</p>
-          <br />
-          <p>📞 012 000 0000</p>
-          <p>✉️ hello@lindissweetbakes.co.za</p>
-        </div>
-
-      </div>
-
-      <!-- Footer bottom bar -->
-      <div class="footer-bottom">
-        <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome banner">
+    <div class="hero__content">
+      <span class="hero__badge">✨ Baked Fresh Daily in Pretoria</span>
+      <h1 class="hero__title">
+        Handcrafted with <span>Love</span>,<br />Baked Fresh Daily
+      </h1>
+      <p class="hero__tagline">
+        Artisan cakes, cupcakes, breads &amp; pastries made with the finest local South African ingredients.
+      </p>
+      <div class="hero__buttons">
+        <a href="enquiry.html" class="btn btn--primary">Order Now</a>
+        <a href="products.html" class="btn btn--outline">View Products</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Main JavaScript file (navigation + interactions) -->
-  <script src="js/script.js"></script>
+  <!-- FEATURED CATEGORIES -->
+  <section class="section">
+    <div class="container">
+      <p class="section-subtitle">What We Bake</p>
+      <h2 class="section-title">Our Specialities</h2>
+      <div class="divider"></div>
 
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🎂</div>
+          <h3>Custom Cakes</h3>
+          <p>Celebrate your special moments with a bespoke cake designed just for you — birthdays, weddings, and corporate events.</p>
+          <a href="products.html" class="btn btn--dark" style="margin-top:0.5rem;">Explore Cakes</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🧁</div>
+          <h3>Cupcakes &amp; Pastries</h3>
+          <p>Perfectly portioned treats — from delicate croissants to beautifully decorated cupcakes for any occasion.</p>
+          <a href="products.html" class="btn btn--dark" style="margin-top:0.5rem;">Explore Pastries</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🍞</div>
+          <h3>Artisan Breads</h3>
+          <p>Slow-fermented, oven-fresh artisan breads baked to golden perfection every morning — sourdough, seed loaves and more.</p>
+          <a href="products.html" class="btn btn--dark" style="margin-top:0.5rem;">Explore Breads</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section--beige">
+    <div class="container">
+      <p class="section-subtitle">Why Choose Us</p>
+      <h2 class="section-title">Baked with Heart &amp; Honesty</h2>
+      <div class="divider"></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🌿</div>
+          <h3>Local Ingredients</h3>
+          <p>We source the freshest produce from trusted local suppliers across Gauteng to support our community and ensure quality.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">❤️</div>
+          <h3>Made with Love</h3>
+          <p>Every loaf, cupcake, and cookie is handcrafted in small batches — never mass-produced, always made to order.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🚚</div>
+          <h3>Delivery &amp; Collection</h3>
+          <p>Order online for convenient delivery across Pretoria, or collect fresh from our bakery in Arcadia or Hatfield Farmers Market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-subtitle">Happy Customers</p>
+      <h2 class="section-title">What Our Community Says</h2>
+      <div class="divider"></div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>The custom birthday cake Lindi made for my daughter was absolutely stunning and tasted even better than it looked. Will never go anywhere else!</p>
+          <span class="testimonial-card__author">— Thandiwe M., Arcadia</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>Best sourdough bread in Pretoria, hands down. I pick up a loaf every Saturday at the Hatfield market. Absolutely delicious every single time.</p>
+          <span class="testimonial-card__author">— Pieter V., Hatfield</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>Ordered cupcakes for our office event and they were a huge hit. Professional, prompt, and the packaging was beautiful. Highly recommended!</p>
+          <span class="testimonial-card__author">— Nomsa K., Pretoria CBD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="container">
+      <h2>Ready to Place a Custom Order?</h2>
+      <p>Fill in our simple enquiry form and we'll get back to you within 24 hours to discuss your order.</p>
+      <a href="enquiry.html" class="btn btn--outline">Place an Enquiry</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
+        <p class="footer-brand__tagline">"To bring joy to every table."</p>
+        <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="products.html">Custom Cakes</a></li>
+          <li><a href="products.html">Cupcakes</a></li>
+          <li><a href="products.html">Artisan Breads</a></li>
+          <li><a href="products.html">Pastries</a></li>
+          <li><a href="products.html">Cookies &amp; Brownies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Trading Hours</h4>
+        <p>📍 Arcadia Bakery</p>
+        <p>Mon–Sat: 06:00 – 18:00</p>
+        <br />
+        <p>📍 Hatfield Market</p>
+        <p>Saturdays: 07:00 – 13:00</p>
+        <br />
+        <p>📞 012 000 0000</p>
+        <p>✉️ hello@lindissweetbakes.co.za</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
