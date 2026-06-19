@@ -1,75 +1,74 @@
-/* ================================================================
-   Lindi's Sweet Bakes — External Stylesheet (style.css)
+/* =============================================================
+   Lindi's Sweet Bakes — Main Stylesheet (style.css)
    Student: Lindiwe Mthethwa | ST10129141
-   Module:  WEDE5020
-   ================================================================
+   Module: WEDE5020 — Part 3
+   Colour scheme: Warm Brown + Golden Honey + Cream
+   Typography: Playfair Display (headings) + Lato (body)
+   ============================================================= */
 
-   TABLE OF CONTENTS
-   -----------------
-   1.  CSS Reset & Base
-   2.  CSS Custom Properties (Variables)
-   3.  Typography
-   4.  Layout Utilities
-   5.  Navigation / Site Header
-   6.  Hero Section
-   7.  Page Hero (inner pages)
-   8.  Section & Container Utilities
-   9.  Feature Cards
-   10. Products Grid & Product Cards
-   11. Filter Bar
-   12. About Page Specific
-   13. Mission & Vision Cards
-   14. Baker Card
-   15. Testimonials
-   16. Enquiry Page
-   17. Contact Page (locations + form)
-   18. CTA Banner
-   19. Forms (shared)
-   20. Buttons
-   21. Footer
-   22. Responsive — Tablet (max-width: 1024px)
-   23. Responsive — Mobile (max-width: 768px)
-   24. Responsive — Small Mobile (max-width: 480px)
-   ================================================================ */
+/* ─────────────────────────────────────────────────────────────
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+───────────────────────────────────────────────────────────── */
+:root {
+  --warm-brown:    #5C3D2E;
+  --dark-brown:    #3E2723;
+  --golden-honey:  #D4A017;
+  --honey-light:   #F5C842;
+  --cream:         #FDF6EC;
+  --beige:         #F5ECD7;
+  --text-dark:     #2C1810;
+  --text-mid:      #5C3D2E;
+  --text-light:    #8D6E63;
+  --white:         #FFFFFF;
+  --shadow-sm:     0 2px 8px rgba(92,61,46,0.12);
+  --shadow-md:     0 6px 24px rgba(92,61,46,0.18);
+  --shadow-lg:     0 16px 48px rgba(92,61,46,0.22);
+  --radius-sm:     6px;
+  --radius-md:     12px;
+  --radius-lg:     20px;
+  --transition:    0.28s ease;
+  --font-heading:  'Playfair Display', Georgia, serif;
+  --font-body:     'Lato', Arial, sans-serif;
+  --container-max: 1200px;
+  --nav-height:    72px;
+}
 
-
-/* ================================================================
-   1. CSS RESET & BASE
-   Ensures consistent rendering across all browsers
-   ================================================================ */
-
-*,
-*::before,
-*::after {
+/* ─────────────────────────────────────────────────────────────
+   2. RESET & DEFAULT STYLES
+───────────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: 16px;            /* base for rem calculations  */
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: var(--fs-base);
-  line-height: var(--lh-body);
-  color: var(--text-body);
-  background-color: var(--bg-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  background-color: var(--cream);
+  line-height: 1.7;
+  min-height: 100vh;
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 a {
-  color: inherit;
+  color: var(--warm-brown);
   text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover, a:focus {
+  color: var(--golden-honey);
 }
 
 ul {
@@ -78,1704 +77,1300 @@ ul {
 
 button {
   cursor: pointer;
-  font-family: inherit;
+  font-family: var(--font-body);
   border: none;
   background: none;
 }
 
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid var(--golden-honey);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
-
-/* ================================================================
-   2. CSS CUSTOM PROPERTIES (VARIABLES)
-   Centralised design tokens — change here and everything updates
-   ================================================================ */
-
-:root {
-
-  /* --- Colour Palette --- */
-  --warm-cream:     #FDF6EC;       /* page background           */
-  --soft-beige:     #F5EBD8;       /* alternate section background */
-  --golden-honey:   #C8860A;       /* primary brand accent      */
-  --deep-brown:     #3B1F0C;       /* headings, logo text       */
-  --chocolate:      #5C3317;       /* secondary dark colour     */
-  --rose-blush:     #E8A0A0;       /* subtle warm accent        */
-  --text-body:      #4A3728;       /* body text                 */
-  --text-muted:     #7A6555;       /* captions, subtitles       */
-  --text-light:     #A08070;       /* placeholders, hints       */
-  --white:          #FFFFFF;
-  --border-light:   #E8D5BB;       /* card / input borders      */
-
-  /* Dark section backgrounds */
-  --dark-section-bg: #2C1608;
-  --dark-section-text: #F5E6CC;
-
-  /* --- Typography --- */
-  --font-heading: 'Playfair Display', 'Georgia', serif;
-  --font-body:    'Lato', 'Helvetica Neue', sans-serif;
-
-  /* Font sizes — fluid scale using rem */
-  --fs-xs:     0.75rem;    /*  12px */
-  --fs-sm:     0.875rem;   /*  14px */
-  --fs-base:   1rem;       /*  16px */
-  --fs-md:     1.125rem;   /*  18px */
-  --fs-lg:     1.25rem;    /*  20px */
-  --fs-xl:     1.5rem;     /*  24px */
-  --fs-2xl:    2rem;       /*  32px */
-  --fs-3xl:    2.5rem;     /*  40px */
-  --fs-4xl:    3.25rem;    /*  52px */
-
-  /* Line heights */
-  --lh-body:     1.7;
-  --lh-heading:  1.2;
-  --lh-tight:    1.1;
-
-  /* Letter spacing */
-  --ls-wide:    0.12em;
-  --ls-normal:  0;
-
-  /* --- Spacing scale --- */
-  --space-1:   0.25rem;
-  --space-2:   0.5rem;
-  --space-3:   0.75rem;
-  --space-4:   1rem;
-  --space-5:   1.25rem;
-  --space-6:   1.5rem;
-  --space-8:   2rem;
-  --space-10:  2.5rem;
-  --space-12:  3rem;
-  --space-16:  4rem;
-  --space-20:  5rem;
-  --space-24:  6rem;
-
-  /* --- Layout --- */
-  --container-max:  1200px;
-  --container-px:   1.5rem;
-
-  /* --- Borders & Radii --- */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   16px;
-  --radius-xl:   24px;
-  --radius-full: 9999px;
-
-  /* --- Shadows --- */
-  --shadow-sm:   0 1px 3px rgba(59,31,12,0.08);
-  --shadow-md:   0 4px 16px rgba(59,31,12,0.12);
-  --shadow-lg:   0 8px 32px rgba(59,31,12,0.16);
-  --shadow-card: 0 2px 12px rgba(59,31,12,0.10);
-
-  /* --- Transitions --- */
-  --transition-fast:   0.15s ease;
-  --transition-base:   0.25s ease;
-  --transition-slow:   0.4s ease;
-
-  /* --- Nav height --- */
-  --nav-height: 72px;
-
-  /* --- Background Colours (aliases) --- */
-  --bg-main:  var(--warm-cream);
-  --bg-alt:   var(--soft-beige);
-}
-
-
-/* ================================================================
+/* ─────────────────────────────────────────────────────────────
    3. TYPOGRAPHY
-   ================================================================ */
-
+───────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--deep-brown);
-  line-height: var(--lh-heading);
+  color: var(--dark-brown);
+  line-height: 1.25;
   font-weight: 700;
 }
 
-h1 { font-size: var(--fs-4xl); }
-h2 { font-size: var(--fs-3xl); }
-h3 { font-size: var(--fs-xl);  }
-h4 { font-size: var(--fs-lg);  }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+h4 { font-size: 1.1rem; }
 
-p {
-  margin-bottom: var(--space-4);
-  color: var(--text-body);
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ─────────────────────────────────────────────────────────────
+   4. LAYOUT UTILITIES
+───────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
-p:last-child {
-  margin-bottom: 0;
+.section {
+  padding-block: 5rem;
 }
 
-strong {
-  font-weight: 700;
+.section--beige {
+  background-color: var(--beige);
 }
 
-/* Section subtitle — small uppercase label above heading */
 .section-subtitle {
-  display: block;
   font-family: var(--font-body);
-  font-size: var(--fs-sm);
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: var(--ls-wide);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--golden-honey);
-  margin-bottom: var(--space-2);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
-/* Section main title */
 .section-title {
-  font-size: var(--fs-3xl);
-  color: var(--deep-brown);
-  margin-bottom: var(--space-3);
+  font-family: var(--font-heading);
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
 }
 
-/* Decorative divider line below section headings */
 .divider {
   width: 60px;
   height: 3px;
   background: var(--golden-honey);
-  margin: 0 auto var(--space-10);
-  border-radius: var(--radius-full);
+  border-radius: 2px;
+  margin-bottom: 3rem;
 }
 
-/* Required field asterisk */
-.required {
-  color: var(--golden-honey);
+/* ─────────────────────────────────────────────────────────────
+   5. BUTTONS
+───────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+  line-height: 1;
 }
 
-
-/* ================================================================
-   4. LAYOUT UTILITIES
-   ================================================================ */
-
-.container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-px);
+.btn:hover, .btn:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-/* Standard section spacing */
-.section {
-  padding: var(--space-20) 0;
+.btn--primary {
+  background: var(--golden-honey);
+  color: var(--dark-brown);
+}
+.btn--primary:hover {
+  background: var(--honey-light);
+  color: var(--dark-brown);
 }
 
-/* Alternate section background */
-.section--beige {
-  background-color: var(--bg-alt);
+.btn--outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  background: transparent;
+}
+.btn--outline:hover {
+  background: var(--white);
+  color: var(--dark-brown);
 }
 
+.btn--dark {
+  background: var(--dark-brown);
+  color: var(--cream);
+}
+.btn--dark:hover {
+  background: var(--warm-brown);
+  color: var(--white);
+}
 
-/* ================================================================
-   5. NAVIGATION / SITE HEADER
-   ================================================================ */
+.btn--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
 
+/* ─────────────────────────────────────────────────────────────
+   6. NAVIGATION
+───────────────────────────────────────────────────────────── */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background-color: var(--white);
-  border-bottom: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
+  z-index: 900;
+  background: var(--dark-brown);
+  box-shadow: none;
+  transition: box-shadow var(--transition);
+}
+
+.site-header--scrolled {
+  box-shadow: var(--shadow-md);
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-px);
   height: var(--nav-height);
+  padding-inline: 1.5rem;
+  max-width: var(--container-max);
+  margin-inline: auto;
 }
 
-/* Logo */
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 0.75rem;
+  color: var(--white);
   text-decoration: none;
 }
 
 .nav__logo-icon {
-  font-size: var(--fs-2xl);
-  line-height: 1;
+  font-size: 1.6rem;
 }
 
 .nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
   display: flex;
   flex-direction: column;
-  font-family: var(--font-heading);
-  font-size: var(--fs-md);
-  font-weight: 700;
-  color: var(--deep-brown);
-  line-height: 1.1;
 }
 
 .nav__logo-sub {
   font-family: var(--font-body);
-  font-size: var(--fs-xs);
+  font-size: 0.7rem;
   font-weight: 400;
-  color: var(--text-muted);
-  letter-spacing: var(--ls-wide);
+  letter-spacing: 0.08em;
+  color: var(--golden-honey);
   text-transform: uppercase;
 }
 
-/* Navigation links */
 .nav__links {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
+  gap: 0.25rem;
 }
 
 .nav__links a {
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
+  color: rgba(255,255,255,0.85);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-body);
-  position: relative;
-  padding-bottom: var(--space-1);
-  transition: color var(--transition-fast);
+  transition: color var(--transition), background var(--transition);
 }
 
-/* Animated underline on hover */
-.nav__links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--golden-honey);
-  transition: width var(--transition-base);
-}
-
-.nav__links a:hover {
-  color: var(--golden-honey);
-}
-
-.nav__links a:hover::after,
-.nav__links a.active::after {
-  width: 100%;
-}
-
+.nav__links a:hover,
+.nav__links a:focus,
 .nav__links a.active {
   color: var(--golden-honey);
+  background: rgba(255,255,255,0.08);
 }
 
-/* Mobile burger button — hidden on desktop */
+/* Mobile burger */
 .nav__burger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
-  padding: var(--space-2);
-  background: none;
-  border: none;
-  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.nav__burger:hover {
+  background: rgba(255,255,255,0.1);
 }
 
 .nav__burger span {
   display: block;
-  width: 24px;
+  width: 100%;
   height: 2px;
-  background-color: var(--deep-brown);
-  border-radius: var(--radius-full);
-  transition: transform var(--transition-base), opacity var(--transition-base);
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
 }
 
-/* Burger open state — transforms into X */
-.nav__burger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav__burger.open span:nth-child(2) {
-  opacity: 0;
-}
-.nav__burger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+/* Burger animation when open */
+.nav__burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger--open span:nth-child(2) { opacity: 0; }
+.nav__burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-
-/* ================================================================
-   6. HERO SECTION (Homepage)
-   ================================================================ */
-
+/* ─────────────────────────────────────────────────────────────
+   7. HERO SECTION
+───────────────────────────────────────────────────────────── */
 .hero {
   min-height: calc(100vh - var(--nav-height));
+  background: linear-gradient(135deg, var(--dark-brown) 0%, var(--warm-brown) 60%, #8B4513 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--space-24) var(--container-px);
-
-  /* Layered warm gradient background */
-  background:
-    radial-gradient(ellipse at 70% 30%, rgba(200,134,10,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 70%, rgba(232,160,160,0.20) 0%, transparent 50%),
-    linear-gradient(160deg, #FDF3E3 0%, #FAE8C8 40%, #F5DEB3 100%);
+  padding: 4rem 1.5rem;
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle decorative ring behind hero content */
 .hero::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  border: 1px solid rgba(200,134,10,0.12);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(200,134,10,0.08);
-  border-radius: 50%;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(212,160,23,0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .hero__content {
+  max-width: 720px;
   position: relative;
   z-index: 1;
-  max-width: 760px;
 }
 
-/* Badge pill above headline */
 .hero__badge {
   display: inline-block;
-  background-color: rgba(200,134,10,0.12);
+  background: rgba(212,160,23,0.2);
+  border: 1px solid var(--golden-honey);
   color: var(--golden-honey);
-  font-size: var(--fs-xs);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(200,134,10,0.30);
-  margin-bottom: var(--space-6);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
 }
 
-/* Main hero heading */
 .hero__title {
-  font-size: var(--fs-4xl);
-  color: var(--deep-brown);
-  line-height: var(--lh-tight);
-  margin-bottom: var(--space-6);
-  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
 }
 
-/* Golden highlighted word in hero title */
 .hero__title span {
   color: var(--golden-honey);
   font-style: italic;
 }
 
 .hero__tagline {
-  font-size: var(--fs-md);
-  color: var(--text-muted);
-  max-width: 540px;
-  margin: 0 auto var(--space-10);
-  line-height: var(--lh-body);
+  color: rgba(255,255,255,0.82);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
 }
 
 .hero__buttons {
   display: flex;
-  gap: var(--space-4);
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-
-/* ================================================================
-   7. PAGE HERO (Inner pages — About, Products, etc.)
-   ================================================================ */
-
+/* Page hero (inner pages) */
 .page-hero {
-  background: linear-gradient(135deg, #3B1F0C 0%, #5C3317 50%, #7A4828 100%);
+  background: linear-gradient(135deg, var(--dark-brown), var(--warm-brown));
   color: var(--white);
   text-align: center;
-  padding: var(--space-16) var(--container-px);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Decorative circle pattern */
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 250px;
-  height: 250px;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.page-hero::after {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  left: -30px;
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(200,134,10,0.15);
-  border-radius: 50%;
-  pointer-events: none;
+  padding: 4rem 1.5rem 3rem;
 }
 
 .page-hero h1 {
   color: var(--white);
-  font-size: var(--fs-3xl);
-  margin-bottom: var(--space-3);
-  position: relative;
-  z-index: 1;
+  margin-bottom: 0.75rem;
 }
 
 .page-hero p {
-  color: rgba(255,255,255,0.80);
-  font-size: var(--fs-md);
-  margin: 0;
-  position: relative;
-  z-index: 1;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  margin-bottom: 0;
 }
 
-
-/* ================================================================
-   8. SECTION & CONTAINER UTILITIES
-   ================================================================ */
-
-/* Text-centred sections */
-.section .section-title,
-.section .section-subtitle,
-.section .divider {
-  text-align: center;
-}
-
-
-/* ================================================================
-   9. FEATURE CARDS
-   Used on Home, About pages
-   ================================================================ */
-
+/* ─────────────────────────────────────────────────────────────
+   8. FEATURE CARDS
+───────────────────────────────────────────────────────────── */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  gap: 1.75rem;
 }
 
 .feature-card {
   background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
   text-align: center;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
 }
 
 .feature-card__icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-4);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .feature-card h3 {
-  font-size: var(--fs-lg);
-  color: var(--deep-brown);
-  margin-bottom: var(--space-3);
+  margin-bottom: 0.75rem;
 }
 
-.feature-card p {
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-  line-height: var(--lh-body);
-}
-
-
-/* ================================================================
-   10. PRODUCTS GRID & PRODUCT CARDS
-   ================================================================ */
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
-}
-
-.product-card {
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Product image / emoji placeholder area */
-.product-card__image {
-  background: linear-gradient(135deg, var(--soft-beige) 0%, #EDD8B8 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  height: 140px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.product-card__body {
-  padding: var(--space-5);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.product-card__category {
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  color: var(--golden-honey);
-  margin-bottom: var(--space-1);
-}
-
-.product-card__name {
-  font-size: var(--fs-md);
-  color: var(--deep-brown);
-  margin-bottom: var(--space-2);
-}
-
-.product-card__desc {
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-  line-height: var(--lh-body);
-  flex: 1;
-  margin-bottom: var(--space-4);
-}
-
-/* Card footer: price + link in one row */
-.product-card__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border-light);
-}
-
-.product-card__price {
-  font-family: var(--font-heading);
-  font-size: var(--fs-md);
-  font-weight: 700;
-  color: var(--golden-honey);
-}
-
-.product-card__link {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--deep-brown);
-  letter-spacing: 0.02em;
-  transition: color var(--transition-fast), letter-spacing var(--transition-fast);
-}
-
-.product-card__link:hover {
-  color: var(--golden-honey);
-  letter-spacing: 0.06em;
-}
-
-/* Hidden state for filtered-out cards */
-.product-card.hidden {
-  display: none;
-}
-
-
-/* ================================================================
-   11. FILTER BAR (Products page)
-   ================================================================ */
-
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  justify-content: center;
-  margin-bottom: var(--space-10);
-}
-
-.filter-btn {
-  background: var(--white);
-  border: 1.5px solid var(--border-light);
-  border-radius: var(--radius-full);
-  padding: var(--space-2) var(--space-5);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  color: var(--text-body);
-  cursor: pointer;
-  transition:
-    background-color var(--transition-fast),
-    border-color var(--transition-fast),
-    color var(--transition-fast);
-}
-
-.filter-btn:hover {
-  border-color: var(--golden-honey);
-  color: var(--golden-honey);
-}
-
-.filter-btn.active {
-  background-color: var(--golden-honey);
-  border-color: var(--golden-honey);
-  color: var(--white);
-}
-
-
-/* ================================================================
-   12. ABOUT PAGE — STORY SECTION
-   Two-column layout: text + image
-   ================================================================ */
-
-.about-story {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
-  align-items: center;
-}
-
-.about-story__text {
-  /* Text content stays left */
-}
-
-.about-story__text h2 {
-  font-size: var(--fs-3xl);
-  color: var(--deep-brown);
-  margin-bottom: var(--space-6);
-}
-
-.about-story__text p {
-  color: var(--text-body);
-  line-height: var(--lh-body);
-  margin-bottom: var(--space-4);
-}
-
-.about-story__text .btn {
-  margin-top: var(--space-4);
-}
-
-/* Image column */
-.about-story__image {
-  position: relative;
-}
-
-/* Placeholder box — replace with <img> in production */
-.about-story__img-placeholder {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(135deg, var(--soft-beige) 0%, #EDD8B8 100%);
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 6rem;
-  border: 1px solid var(--border-light);
-}
-
-/* "Est. 2020" circular badge overlay */
-.about-story__badge {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  width: 90px;
-  height: 90px;
-  background: var(--golden-honey);
-  color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-size: var(--fs-sm);
-  line-height: 1.1;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-}
-
-.about-story__badge strong {
-  font-size: var(--fs-lg);
-}
-
-
-/* ================================================================
-   13. MISSION & VISION CARDS
-   ================================================================ */
-
-.mission-vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
-}
-
-.mv-card {
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: var(--space-10) var(--space-8);
-  text-align: center;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.mv-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.mv-card__icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-4);
-  display: block;
-}
-
-.mv-card h3 {
-  font-size: var(--fs-xl);
-  color: var(--deep-brown);
-  margin-bottom: var(--space-4);
-}
-
-.mv-card p {
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-  line-height: var(--lh-body);
-}
-
-
-/* ================================================================
-   14. BAKER CARD
-   ================================================================ */
-
-.baker-card {
-  display: flex;
-  gap: var(--space-10);
-  align-items: flex-start;
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10);
-  max-width: 860px;
-  margin: 0 auto;
-  box-shadow: var(--shadow-card);
-}
-
-.baker-card__avatar {
-  flex-shrink: 0;
-  width: 140px;
-  height: 140px;
-  background: linear-gradient(135deg, var(--soft-beige) 0%, #EDD8B8 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  border: 3px solid var(--border-light);
-}
-
-.baker-card__info {
-  flex: 1;
-}
-
-.baker-card__name {
-  font-family: var(--font-heading);
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  color: var(--deep-brown);
-  margin-bottom: var(--space-1);
-}
-
-.baker-card__title {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  color: var(--golden-honey);
-  margin-bottom: var(--space-5);
-}
-
-
-/* ================================================================
-   15. TESTIMONIALS
-   ================================================================ */
-
+/* ─────────────────────────────────────────────────────────────
+   9. TESTIMONIALS
+───────────────────────────────────────────────────────────── */
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  gap: 1.75rem;
 }
 
 .testimonial-card {
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8) var(--space-6);
-  position: relative;
+  background: var(--cream);
+  border: 1px solid rgba(212,160,23,0.25);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Decorative opening-quote mark */
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: var(--space-4);
-  left: var(--space-5);
-  font-family: var(--font-heading);
-  font-size: 4rem;
-  line-height: 1;
-  color: rgba(200,134,10,0.12);
-  pointer-events: none;
-}
-
-.testimonial-card .stars {
+.stars {
   color: var(--golden-honey);
-  font-size: var(--fs-base);
-  margin-bottom: var(--space-4);
-}
-
-.testimonial-card p {
-  font-style: italic;
-  color: var(--text-body);
-  line-height: var(--lh-body);
-  margin-bottom: var(--space-5);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
 }
 
 .testimonial-card__author {
-  font-size: var(--fs-sm);
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--warm-brown);
 }
 
-
-/* ================================================================
-   16. ENQUIRY PAGE
-   Two-column layout: info panel + form
-   ================================================================ */
-
-.enquiry-wrapper {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: var(--space-10);
-  align-items: start;
-}
-
-/* Left info panel */
-.enquiry-info {
-  background: linear-gradient(160deg, var(--deep-brown) 0%, var(--chocolate) 100%);
-  color: var(--dark-section-text);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10) var(--space-8);
-}
-
-.enquiry-info h3 {
-  color: var(--white);
-  font-size: var(--fs-xl);
-  margin-bottom: var(--space-8);
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
-
-.enquiry-info__item {
-  display: flex;
-  gap: var(--space-4);
-  align-items: flex-start;
-  margin-bottom: var(--space-6);
-}
-
-.enquiry-info__item span {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.enquiry-info__item strong {
-  display: block;
-  color: var(--golden-honey);
-  margin-bottom: var(--space-1);
-  font-size: var(--fs-sm);
-}
-
-.enquiry-info__item p {
-  color: rgba(245,230,204,0.80);
-  margin: 0;
-}
-
-
-/* ================================================================
-   17. CONTACT PAGE
-   Location cards + contact form
-   ================================================================ */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
-}
-
-.location-card {
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.location-card__header {
-  background: linear-gradient(135deg, var(--deep-brown) 0%, var(--chocolate) 100%);
-  color: var(--white);
-  padding: var(--space-5) var(--space-6);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.loc-icon {
-  font-size: var(--fs-xl);
-}
-
-.location-card__header h3 {
-  color: var(--white);
-  font-size: var(--fs-lg);
-}
-
-.location-card__body {
-  padding: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.location-detail {
-  display: flex;
-  gap: var(--space-3);
-  align-items: flex-start;
-}
-
-.location-detail span {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.location-detail strong {
-  display: block;
-  color: var(--deep-brown);
-  margin-bottom: 2px;
-  font-size: var(--fs-sm);
-}
-
-.location-detail div {
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* Map placeholder box */
-.map-placeholder {
-  height: 160px;
-  background: var(--soft-beige);
-  border-top: 1px solid var(--border-light);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  color: var(--text-muted);
-  font-size: 2rem;
-}
-
-.map-placeholder small {
-  font-size: var(--fs-xs);
-  color: var(--text-light);
-}
-
-/* Contact form — centred single column */
-.contact-form-section {
-  max-width: 680px;
-  margin: 0 auto;
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10);
-  box-shadow: var(--shadow-card);
-}
-
-
-/* ================================================================
-   18. CTA BANNER
-   Dark full-width promotional strip
-   ================================================================ */
-
+/* ─────────────────────────────────────────────────────────────
+   10. CTA BANNER
+───────────────────────────────────────────────────────────── */
 .cta-banner {
-  background: linear-gradient(135deg, var(--deep-brown) 0%, #4A2810 50%, var(--chocolate) 100%);
+  background: linear-gradient(135deg, var(--dark-brown), var(--warm-brown));
   color: var(--white);
   text-align: center;
-  padding: var(--space-16) var(--container-px);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-banner::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(200,134,10,0.20);
-  border-radius: 50%;
-  pointer-events: none;
+  padding: 5rem 1.5rem;
 }
 
 .cta-banner h2 {
   color: var(--white);
-  font-size: var(--fs-3xl);
-  margin-bottom: var(--space-4);
+  margin-bottom: 1rem;
 }
 
 .cta-banner p {
-  color: rgba(255,255,255,0.80);
-  font-size: var(--fs-md);
-  margin-bottom: var(--space-8);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
 }
 
-
-/* ================================================================
-   19. FORMS (Shared — enquiry.html + contact.html)
-   ================================================================ */
-
-.form-card {
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-10);
-  box-shadow: var(--shadow-card);
-}
-
-.form-card h2 {
-  color: var(--deep-brown);
-  font-size: var(--fs-2xl);
-}
-
-/* Two-column form row */
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-}
-
-/* Individual form field wrapper */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: var(--space-5);
-}
-
-.form-group label {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--deep-brown);
-  margin-bottom: var(--space-2);
-}
-
-/* Input / select / textarea base styles */
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: var(--space-3) var(--space-4);
-  border: 1.5px solid var(--border-light);
-  border-radius: var(--radius-md);
-  font-size: var(--fs-base);
-  color: var(--text-body);
-  background-color: var(--white);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  outline: none;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--text-light);
-}
-
-/* Focus state */
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--golden-honey);
-  box-shadow: 0 0 0 3px rgba(200,134,10,0.15);
-}
-
-/* Invalid state shown by JS */
-.form-group input.invalid,
-.form-group select.invalid,
-.form-group textarea.invalid {
-  border-color: #C0392B;
-  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
-}
-
-.form-group textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-/* Inline error message */
-.form-error-msg {
-  font-size: var(--fs-xs);
-  color: #C0392B;
-  margin-top: var(--space-1);
-  display: block;
-  min-height: 1em;
-}
-
-/* Disclaimer / note text below a form */
-.form-note {
-  font-size: var(--fs-xs);
-  color: var(--text-light);
-  margin-bottom: var(--space-5);
-  line-height: 1.6;
-}
-
-/* Success message — hidden by default, shown by JS */
-.form-success {
-  display: none;
-  background: #EAF6EC;
-  border: 1px solid #A3D4AB;
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
-  color: #2E7D32;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  margin-top: var(--space-5);
-  text-align: center;
-}
-
-
-/* ================================================================
-   20. BUTTONS
-   ================================================================ */
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-full);
-  font-family: var(--font-body);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color var(--transition-fast),
-    color var(--transition-fast),
-    border-color var(--transition-fast),
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-/* Primary: filled golden */
-.btn--primary {
-  background-color: var(--golden-honey);
-  color: var(--white);
-  border: 2px solid var(--golden-honey);
-}
-
-.btn--primary:hover {
-  background-color: #A06A08;
-  border-color: #A06A08;
-}
-
-/* Outline: white border (for use on dark backgrounds) */
-.btn--outline {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid rgba(255,255,255,0.80);
-}
-
-.btn--outline:hover {
-  background-color: rgba(255,255,255,0.12);
-  border-color: var(--white);
-}
-
-/* Dark: filled dark brown */
-.btn--dark {
-  background-color: var(--deep-brown);
-  color: var(--white);
-  border: 2px solid var(--deep-brown);
-}
-
-.btn--dark:hover {
-  background-color: var(--chocolate);
-  border-color: var(--chocolate);
-}
-
-
-/* ================================================================
-   21. FOOTER
-   ================================================================ */
-
+/* ─────────────────────────────────────────────────────────────
+   11. FOOTER
+───────────────────────────────────────────────────────────── */
 .site-footer {
-  background: linear-gradient(160deg, #1E0C03 0%, var(--deep-brown) 100%);
-  color: var(--dark-section-text);
-  padding: var(--space-16) 0 0;
+  background: var(--dark-brown);
+  color: rgba(255,255,255,0.8);
+  padding-top: 4rem;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: var(--space-8);
-  padding-bottom: var(--space-12);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 3rem;
 }
 
-/* Brand column */
 .footer-brand__logo {
   font-family: var(--font-heading);
-  font-size: var(--fs-lg);
-  font-weight: 700;
+  font-size: 1.2rem;
   color: var(--white);
-  margin-bottom: var(--space-2);
+  margin-bottom: 0.5rem;
 }
 
 .footer-brand__tagline {
-  font-style: italic;
   color: var(--golden-honey);
-  font-size: var(--fs-sm);
-  margin-bottom: var(--space-3);
+  font-style: italic;
+  margin-bottom: 0.75rem;
 }
 
-.footer-brand p {
-  font-size: var(--fs-sm);
-  color: rgba(245,230,204,0.75);
-  line-height: 1.7;
-  margin-bottom: var(--space-4);
+.footer-col h4 {
+  color: var(--golden-honey);
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-/* Social links */
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+  color: var(--golden-honey);
+}
+
+.footer-hours p {
+  margin-bottom: 0.25rem;
+  font-size: 0.88rem;
+}
+
 .social-links {
   display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-2);
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  font-size: var(--fs-base);
-  transition: background var(--transition-fast), transform var(--transition-fast);
-  text-decoration: none;
+  font-size: 1.3rem;
+  transition: transform var(--transition);
+  display: block;
 }
 
 .social-link:hover {
-  background: rgba(200,134,10,0.30);
-  transform: translateY(-2px);
+  transform: scale(1.2);
 }
 
-/* Generic footer columns */
-.footer-col h4 {
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   12. FORMS
+───────────────────────────────────────────────────────────── */
+.enquiry-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.enquiry-info {
+  background: linear-gradient(160deg, var(--dark-brown), var(--warm-brown));
   color: var(--white);
-  font-family: var(--font-heading);
-  font-size: var(--fs-base);
-  margin-bottom: var(--space-4);
-  padding-bottom: var(--space-2);
-  border-bottom: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  position: sticky;
+  top: calc(var(--nav-height) + 1rem);
 }
 
-.footer-col ul {
+.enquiry-info h3 {
+  color: var(--golden-honey);
+  margin-bottom: 1.5rem;
+}
+
+.enquiry-info__item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  align-items: flex-start;
+  font-size: 0.92rem;
+}
+
+.enquiry-info__item span:first-child {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.form-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  margin-bottom: 1.25rem;
 }
 
-.footer-col ul a {
-  font-size: var(--fs-sm);
-  color: rgba(245,230,204,0.70);
-  text-decoration: none;
-  transition: color var(--transition-fast);
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  margin-bottom: 0.4rem;
 }
 
-.footer-col ul a:hover {
+.required {
   color: var(--golden-honey);
 }
 
-/* Trading hours column */
-.footer-hours p {
-  font-size: var(--fs-sm);
-  color: rgba(245,230,204,0.75);
-  line-height: 1.6;
-  margin-bottom: var(--space-1);
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #DDD0C4;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
 }
 
-/* Footer bottom bar */
-.footer-bottom {
-  padding: var(--space-5) 0;
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--golden-honey);
+  box-shadow: 0 0 0 3px rgba(212,160,23,0.18);
+}
+
+/* Error state */
+.form-group--error input,
+.form-group--error select,
+.form-group--error textarea {
+  border-color: #C0392B;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+}
+
+.form-error-msg {
+  color: #C0392B;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  min-height: 1.1em;
+  display: block;
+}
+
+.form-note {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.form-success {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: #EAF7EA;
+  border: 1px solid #6ABF69;
+  border-radius: var(--radius-sm);
+  color: #2D7A2D;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   13. PRODUCTS PAGE
+───────────────────────────────────────────────────────────── */
+.products-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.product-search-wrap {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.product-search-wrap input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 2px solid #DDD0C4;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--white);
+  transition: border-color var(--transition);
+}
+
+.product-search-wrap input:focus {
+  outline: none;
+  border-color: var(--golden-honey);
+}
+
+.product-search-wrap::before {
+  content: '🔍';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  border: 2px solid var(--beige);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn--active {
+  background: var(--golden-honey);
+  border-color: var(--golden-honey);
+  color: var(--dark-brown);
+}
+
+#products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-card__image {
+  background: var(--beige);
+  padding: 2rem;
+  text-align: center;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card__emoji {
+  font-size: 4rem;
+}
+
+.product-card__body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.product-card__category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--golden-honey);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.product-card__name {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-brown);
+}
+
+.product-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.product-card__price {
+  font-weight: 700;
+  color: var(--warm-brown);
+  font-size: 0.95rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-light);
+  padding: 3rem;
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   14. TABS
+───────────────────────────────────────────────────────────── */
+.tabs-container {
+  margin-bottom: 2rem;
+}
+
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--beige);
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+}
+
+.tabs-nav__btn {
+  padding: 0.65rem 1.25rem;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.tabs-nav__btn:hover,
+.tabs-nav__btn--active {
+  color: var(--warm-brown);
+  border-bottom-color: var(--golden-honey);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel--active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   15. ACCORDION
+───────────────────────────────────────────────────────────── */
+.accordion {
+  border: 1px solid var(--beige);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--beige);
+}
+
+.accordion__item:last-child {
+  border-bottom: none;
+}
+
+.accordion__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background var(--transition);
+  text-align: left;
+}
+
+.accordion__header:hover {
+  background: var(--cream);
+}
+
+.accordion__header::after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--golden-honey);
+  transition: transform var(--transition);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.accordion__item--open .accordion__header {
+  background: var(--cream);
+  color: var(--warm-brown);
+}
+
+.accordion__item--open .accordion__header::after {
+  transform: rotate(45deg);
+}
+
+.accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  background: var(--cream);
+}
+
+.accordion__body-inner {
+  padding: 1rem 1.5rem 1.25rem;
+  color: var(--text-mid);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   16. GALLERY LIGHTBOX
+───────────────────────────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--beige);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.gallery-item:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-md);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox--open {
+  display: flex;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+}
+
+.lightbox__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  gap: 1rem;
+}
+
+.lightbox__img {
+  max-width: 80vw;
+  max-height: 70vh;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox__caption {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.92rem;
   text-align: center;
 }
 
-.footer-bottom p {
-  font-size: var(--fs-xs);
-  color: rgba(245,230,204,0.45);
-  margin: 0;
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+  position: fixed;
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition);
+  z-index: 2001;
 }
 
+.lightbox__close { top: 1.5rem; right: 1.5rem; }
+.lightbox__prev  { left: 1.5rem; top: 50%; transform: translateY(-50%); }
+.lightbox__next  { right: 1.5rem; top: 50%; transform: translateY(-50%); }
 
-/* ================================================================
-   22. RESPONSIVE — TABLET (max-width: 1024px)
-   ================================================================ */
-
-@media (max-width: 1024px) {
-
-  /* Typography adjustments */
-  h1        { font-size: var(--fs-3xl); }
-  h2        { font-size: var(--fs-2xl); }
-  .section-title { font-size: var(--fs-2xl); }
-
-  .hero__title  { font-size: var(--fs-3xl); }
-
-  /* Navigation */
-  .nav__links {
-    gap: var(--space-6);
-  }
-
-  /* Features grid: 2 columns */
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Products grid: 2 columns */
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* About story: still 2 col but narrower */
-  .about-story {
-    gap: var(--space-10);
-  }
-
-  /* Enquiry: stack panels */
-  .enquiry-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .enquiry-info {
-    order: 2;
-  }
-
-  .form-card {
-    order: 1;
-  }
-
-  /* Footer: 2-col grid */
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  /* Testimonials: 2 col */
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Mission/Vision: keep 2 col */
-  .mission-vision-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background: rgba(255,255,255,0.3);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   17. LEAFLET MAP
+───────────────────────────────────────────────────────────── */
+#bakery-map {
+  height: 420px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+}
 
-/* ================================================================
-   23. RESPONSIVE — MOBILE (max-width: 768px)
-   ================================================================ */
+.map-marker {
+  font-size: 2rem;
+  line-height: 1;
+}
 
-@media (max-width: 768px) {
+/* ─────────────────────────────────────────────────────────────
+   18. SCROLL REVEAL ANIMATIONS
+───────────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
 
-  /* Root overrides — tighten spacing */
-  :root {
-    --container-px: 1.2rem;
-    --nav-height: 64px;
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   19. ABOUT PAGE
+───────────────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image-placeholder {
+  background: var(--beige);
+  border-radius: var(--radius-md);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.value-card {
+  background: var(--white);
+  border-left: 4px solid var(--golden-honey);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem;
+}
+
+.value-card h4 {
+  margin-bottom: 0.4rem;
+  color: var(--warm-brown);
+}
+
+.value-card p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   20. CONTACT PAGE
+───────────────────────────────────────────────────────────── */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.contact-info {
+  background: linear-gradient(160deg, var(--dark-brown), var(--warm-brown));
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.contact-info h3 {
+  color: var(--golden-honey);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.92rem;
+  align-items: flex-start;
+}
+
+.contact-info-item span:first-child {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   21. MEDIA QUERIES — RESPONSIVE LAYOUT
+   Breakpoints: tablet (max 992px), mobile (max 600px)
+───────────────────────────────────────────────────────────── */
+
+/* ── TABLET (≤ 992px) ─────────────────────────────────────── */
+@media (max-width: 992px) {
+
+  /* Navigation — show burger, hide links */
+  .nav__burger {
+    display: flex;
   }
 
-  /* ---- Navigation: mobile hamburger menu ---- */
   .nav__links {
     display: none;
     position: absolute;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background-color: var(--white);
+    background: var(--dark-brown);
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: var(--space-4) 0 var(--space-6);
-    border-top: 1px solid var(--border-light);
+    align-items: stretch;
+    padding: 1rem;
+    gap: 0.25rem;
     box-shadow: var(--shadow-md);
-    z-index: 999;
+    z-index: 800;
   }
 
-  /* When JS adds .open class to nav__links */
-  .nav__links.open {
+  .nav__links--open {
     display: flex;
-  }
-
-  .nav__links li {
-    width: 100%;
   }
 
   .nav__links a {
-    display: block;
-    padding: var(--space-3) var(--container-px);
-    font-size: var(--fs-base);
+    padding: 0.9rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
   }
 
-  .nav__links a::after {
+  /* Grids — 2 columns */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer grid — 2 columns */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* Forms — stacked */
+  .enquiry-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-info {
+    position: static;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  /* About page */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── MOBILE (≤ 600px) ─────────────────────────────────────── */
+@media (max-width: 600px) {
+
+  /* Typography scale down */
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+
+  /* Sections */
+  .section {
+    padding-block: 3rem;
+  }
+
+  .container {
+    padding-inline: 1rem;
+  }
+
+  /* Navigation logo — smaller */
+  .nav__logo-text {
+    font-size: 0.9rem;
+  }
+
+  .nav__logo-sub {
     display: none;
   }
 
-  .nav__burger {
-    display: flex;
-  }
-
-  /* ---- Hero ---- */
+  /* Hero */
   .hero {
-    min-height: 85vh;
-    padding: var(--space-16) var(--container-px);
-  }
-
-  .hero__title {
-    font-size: var(--fs-2xl);
-  }
-
-  .hero__tagline {
-    font-size: var(--fs-base);
+    min-height: 80vh;
+    padding: 3rem 1rem;
   }
 
   .hero__buttons {
     flex-direction: column;
     align-items: center;
-    gap: var(--space-3);
   }
 
   .hero__buttons .btn {
     width: 100%;
     max-width: 280px;
-    text-align: center;
   }
 
-  /* Decorative rings hidden on small screens */
-  .hero::before,
-  .hero::after {
-    display: none;
-  }
-
-  /* ---- Page Hero ---- */
-  .page-hero h1 {
-    font-size: var(--fs-2xl);
-  }
-
-  .page-hero p {
-    font-size: var(--fs-base);
-  }
-
-  /* ---- Sections ---- */
-  .section {
-    padding: var(--space-12) 0;
-  }
-
-  .section-title {
-    font-size: var(--fs-2xl);
-  }
-
-  /* ---- Grids: single column ---- */
-  .features-grid,
-  .products-grid,
-  .testimonials-grid,
-  .mission-vision-grid,
-  .contact-grid {
+  /* All grids — single column */
+  .features-grid {
     grid-template-columns: 1fr;
   }
 
-  /* ---- About story: single column ---- */
-  .about-story {
+  .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-8);
   }
 
-  .about-story__img-placeholder {
-    aspect-ratio: 16 / 9;
-    font-size: 4rem;
+  #products-grid {
+    grid-template-columns: 1fr;
   }
 
-  .about-story__badge {
-    bottom: -15px;
-    left: 15px;
-    width: 76px;
-    height: 76px;
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* ---- Baker card: stack vertically ---- */
-  .baker-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--space-8);
-    gap: var(--space-6);
+  /* Footer — single column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
   }
 
-  /* ---- Form rows: single column ---- */
+  /* Form rows — stack on mobile */
   .form-row {
     grid-template-columns: 1fr;
   }
 
-  /* ---- Form cards ---- */
-  .form-card,
-  .contact-form-section {
-    padding: var(--space-6);
+  .form-card {
+    padding: 1.5rem;
   }
 
-  /* ---- Enquiry wrapper: already single col from 1024px ---- */
-
-  /* ---- CTA Banner ---- */
-  .cta-banner h2 {
-    font-size: var(--fs-2xl);
+  /* Products controls — stack */
+  .products-controls {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .cta-banner p {
-    font-size: var(--fs-base);
+  .filter-btns {
+    justify-content: flex-start;
   }
 
-  /* ---- Footer: single column ---- */
-  .footer-grid {
+  /* Values grid — single column */
+  .values-grid {
     grid-template-columns: 1fr;
   }
 
-  .footer-brand {
-    grid-column: auto;
+  /* Map height */
+  #bakery-map {
+    height: 300px;
+  }
+
+  /* Lightbox nav buttons smaller */
+  .lightbox__prev,
+  .lightbox__next {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  /* Tabs wrap on small screens */
+  .tabs-nav {
+    gap: 0.25rem;
+  }
+
+  .tabs-nav__btn {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.85rem;
   }
 }
 
-
-/* ================================================================
-   24. RESPONSIVE — SMALL MOBILE (max-width: 480px)
-   ================================================================ */
-
-@media (max-width: 480px) {
-
-  :root {
-    --container-px: 1rem;
-  }
-
-  /* Tighten hero further */
-  .hero__title {
-    font-size: var(--fs-xl);
-  }
-
-  .hero__badge {
-    font-size: 0.65rem;
-  }
-
-  /* Tighten section spacing */
-  .section {
-    padding: var(--space-10) 0;
-  }
-
-  /* Smaller section headings */
-  .section-title {
-    font-size: var(--fs-xl);
-  }
-
-  h2 {
-    font-size: var(--fs-xl);
-  }
-
-  h3 {
-    font-size: var(--fs-md);
-  }
-
-  /* Reduce feature card padding */
-  .feature-card {
-    padding: var(--space-6) var(--space-4);
-  }
-
-  /* Product card image smaller */
-  .product-card__image {
-    height: 110px;
-    font-size: 2.5rem;
-  }
-
-  /* Filter buttons tighter */
-  .filter-btn {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--fs-xs);
-  }
-
-  /* Baker card smaller avatar */
-  .baker-card__avatar {
-    width: 110px;
-    height: 110px;
-    font-size: 3rem;
-  }
-
-  /* CTA banner text */
-  .cta-banner h2 {
-    font-size: var(--fs-xl);
-  }
-
-  /* Footer bottom */
-  .footer-bottom p {
-    font-size: 0.65rem;
-    padding: 0 var(--space-4);
-  }
+/* ── LARGE SCREENS (≥ 1400px) ────────────────────────────── */
+@media (min-width: 1400px) {
+  :root { --container-max: 1320px; }
 }
-
-/* ================================================================
-   END OF STYLESHEET
-   ================================================================ */
-
-
