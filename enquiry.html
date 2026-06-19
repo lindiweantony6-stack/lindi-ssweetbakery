@@ -1,338 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ============================================================
-       Lindi's Sweet Bakes — Enquiry (enquiry.html)
-       Student: Lindiwe Mthethwa | ST10129141
-       Module: WEDE5020
-       ============================================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Place a custom order enquiry with Lindi's Sweet Bakes, Pretoria. Tell us about your event, product type, and quantity and we'll get back to you within 24 hours." />
-  <title>Place an Enquiry | Lindi's Sweet Bakes</title>
+<!-- ============================================================
+  Lindi's Sweet Bakes — Enquiry (enquiry.html)
+  Student: Lindiwe Mthethwa | ST10129141
+  Module: WEDE5020 — Part 3
+============================================================ -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Place a custom order enquiry with Lindi's Sweet Bakes, Pretoria. Tell us about your event, product type, and quantity and we'll get back to you within 24 hours." />
+<meta name="keywords" content="custom cake order Pretoria, order cupcakes Pretoria, bakery order form, artisan bread order, Lindi's Sweet Bakes enquiry" />
+<meta name="robots" content="index, follow" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+<!-- Open Graph -->
+<meta property="og:title" content="Place an Enquiry | Lindi's Sweet Bakes" />
+<meta property="og:description" content="Order custom cakes, cupcakes, breads and pastries from Lindi's Sweet Bakes, Pretoria. Fill in our simple order enquiry form." />
+<meta property="og:type" content="website" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+<!-- Canonical -->
+<link rel="canonical" href="https://lindissweetbakes.co.za/enquiry.html" />
+
+<title>Place a Custom Order Enquiry | Lindi's Sweet Bakes — Pretoria Bakery</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Main stylesheet -->
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       SITE HEADER & NAVIGATION
-       ============================================================ -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
+<!-- SITE HEADER -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
+      <span class="nav__logo-icon" aria-hidden="true">🍰</span>
+      <span class="nav__logo-text">
+        Lindi's Sweet Bakes
+        <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
+      </span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="enquiry.html" class="active">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
-      <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
-        <span class="nav__logo-icon" aria-hidden="true">🍰</span>
-        <span class="nav__logo-text">
-          Lindi's Sweet Bakes
-          <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
-        </span>
-      </a>
+<main>
 
-      <ul class="nav__links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="enquiry.html" class="active">Enquiry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Page header">
+    <h1>Place a Custom Order Enquiry</h1>
+    <p>Tell us about your order and we'll respond within 24 hours</p>
+  </section>
 
-      <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </nav>
-  </header>
-
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
-  <main>
-
-    <!-- --------------------------------------------------------
-         PAGE HERO
-    -------------------------------------------------------- -->
-    <section class="page-hero" aria-label="Page header">
-      <h1>Place a Custom Order Enquiry</h1>
-      <p>Tell us about your order and we'll respond within 24 hours</p>
-    </section>
-
-    <!-- --------------------------------------------------------
-         ENQUIRY SECTION
-         Two-column layout: info panel left, form right
-    -------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <div class="enquiry-wrapper">
-
-          <!-- ---- Left panel: info & ordering details ---- -->
-          <aside class="enquiry-info" aria-label="Order information">
-
-            <h3>How to Order</h3>
-
-            <div class="enquiry-info__item">
-              <span aria-hidden="true">📝</span>
-              <div>
-                <strong>Fill in the form</strong>
-                <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.88rem;">Tell us your name, contact details, product type, quantity, and event date.</p>
-              </div>
-            </div>
-
-            <div class="enquiry-info__item">
-              <span aria-hidden="true">📞</span>
-              <div>
-                <strong>We'll be in touch</strong>
-                <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.88rem;">We'll contact you within 24 hours to confirm your order and discuss any details.</p>
-              </div>
-            </div>
-
-            <div class="enquiry-info__item">
-              <span aria-hidden="true">🍰</span>
-              <div>
-                <strong>We start baking</strong>
-                <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.88rem;">Once confirmed, we get baking! Your order will be ready for collection or delivery on your selected date.</p>
-              </div>
-            </div>
-
-            <!-- Ordering notice -->
-            <div style="margin-top: 2rem; padding: 1.2rem; background: rgba(255,255,255,0.1); border-radius: 8px; font-size:0.88rem;">
-              <strong style="color: var(--golden-honey);">⏰ Please Note</strong>
-              <p style="margin: 0.5rem 0 0; opacity:0.85;">
-                All custom cake orders require a minimum of <strong>5 business days</strong> notice. Standard orders (cupcakes, breads, pastries) require <strong>48 hours</strong> notice.
-              </p>
-            </div>
-
-            <!-- Contact details -->
-            <div style="margin-top: 1.5rem; font-size: 0.88rem; opacity: 0.85;">
-              <p>📞 012 000 0000</p>
-              <p>✉️ orders@lindissweetbakes.co.za</p>
-              <p>📍 12 Honey Lane, Arcadia, Pretoria</p>
-            </div>
-
-          </aside>
-
-          <!-- ---- Right: Enquiry Form ---- -->
-          <div class="form-card">
-            <h2 style="margin-bottom: 0.3rem;">Custom Order Form</h2>
-            <p style="margin-bottom: 2rem; font-size:0.92rem; opacity:0.8;">Fields marked with <span style="color:var(--golden-honey);">*</span> are required.</p>
-
-            <!-- Form — validation handled by script.js -->
-            <form id="enquiry-form" novalidate aria-label="Custom order enquiry form">
-
-              <!-- Row 1: Full Name + Email -->
-              <div class="form-row">
-
-                <div class="form-group">
-                  <label for="full-name">Full Name <span class="required" aria-hidden="true">*</span></label>
-                  <input
-                    type="text"
-                    id="full-name"
-                    name="full-name"
-                    placeholder="e.g. Thandiwe Nkosi"
-                    autocomplete="name"
-                    required
-                    aria-required="true"
-                  />
-                  <!-- Error message shown by JS when validation fails -->
-                  <span class="form-error-msg" role="alert" aria-live="polite"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="e.g. thandiwe@email.com"
-                    autocomplete="email"
-                    required
-                    aria-required="true"
-                  />
-                  <span class="form-error-msg" role="alert" aria-live="polite"></span>
-                </div>
-
-              </div>
-
-              <!-- Row 2: Phone + Product Type -->
-              <div class="form-row">
-
-                <div class="form-group">
-                  <label for="phone">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="e.g. 082 000 0000"
-                    autocomplete="tel"
-                  />
-                  <!-- Phone is optional — no error message needed -->
-                </div>
-
-                <div class="form-group">
-                  <label for="product-type">Product Type <span class="required" aria-hidden="true">*</span></label>
-                  <select id="product-type" name="product-type" required aria-required="true">
-                    <option value="">-- Select a product --</option>
-                    <option value="custom-cake">Custom Cake</option>
-                    <option value="wedding-cake">Wedding Cake</option>
-                    <option value="cupcakes">Cupcakes</option>
-                    <option value="artisan-bread">Artisan Bread</option>
-                    <option value="pastries">Pastries</option>
-                    <option value="cookies">Cookies</option>
-                    <option value="brownies">Brownies</option>
-                    <option value="mixed">Mixed / Assorted</option>
-                    <option value="other">Other (specify below)</option>
-                  </select>
-                  <span class="form-error-msg" role="alert" aria-live="polite"></span>
-                </div>
-
-              </div>
-
-              <!-- Row 3: Quantity + Event Date -->
-              <div class="form-row">
-
-                <div class="form-group">
-                  <label for="quantity">Quantity <span class="required" aria-hidden="true">*</span></label>
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    min="1"
-                    placeholder="e.g. 12"
-                    required
-                    aria-required="true"
-                  />
-                  <span class="form-error-msg" role="alert" aria-live="polite"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="event-date">Event / Collection Date <span class="required" aria-hidden="true">*</span></label>
-                  <input
-                    type="date"
-                    id="event-date"
-                    name="event-date"
-                    required
-                    aria-required="true"
-                  />
-                  <span class="form-error-msg" role="alert" aria-live="polite"></span>
-                </div>
-
-              </div>
-
-              <!-- Delivery preference -->
-              <div class="form-group">
-                <label for="delivery">Delivery or Collection</label>
-                <select id="delivery" name="delivery">
-                  <option value="">-- Please select --</option>
-                  <option value="collection-arcadia">Collection — Arcadia Bakery</option>
-                  <option value="collection-hatfield">Collection — Hatfield Market</option>
-                  <option value="delivery">Delivery (Pretoria area)</option>
-                </select>
-              </div>
-
-              <!-- Special instructions / message -->
-              <div class="form-group">
-                <label for="special-instructions">Special Instructions / Message</label>
-                <textarea
-                  id="special-instructions"
-                  name="special-instructions"
-                  placeholder="Please describe your order in detail. Include themes, colours, dietary requirements (e.g. nut-free, gluten-free), cake message, and any other special requests..."
-                ></textarea>
-              </div>
-
-              <!-- Form note about response time -->
-              <p class="form-note">
-                We will respond to your enquiry within 24 hours on business days. For urgent orders, please call us directly on 012 000 0000.
-              </p>
-
-              <!-- Submit button -->
-              <button type="submit" class="btn btn--primary" style="width:100%; font-size:1rem; padding: 1rem;">
-                Submit Enquiry
-              </button>
-
-              <!-- Success message — displayed by JS after valid submission -->
-              <div id="form-success" class="form-success" role="alert" aria-live="polite">
-                ✅ Thank you! Your enquiry has been submitted successfully. We will be in touch within 24 hours.
-              </div>
-
-            </form>
-          </div>
-          <!-- END form-card -->
-
-        </div>
-        <!-- END enquiry-wrapper -->
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       SITE FOOTER
-       ============================================================ -->
-  <footer class="site-footer" aria-label="Site footer">
+  <!-- ENQUIRY SECTION -->
+  <section class="section">
     <div class="container">
-      <div class="footer-grid">
+      <div class="enquiry-wrapper">
 
-        <div class="footer-brand">
-          <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
-          <p class="footer-brand__tagline">"To bring joy to every table."</p>
-          <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
-          <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="Instagram">📸</a>
-            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        <!-- Left: Info panel -->
+        <aside class="enquiry-info" aria-label="Order information">
+          <h3>How to Order</h3>
+
+          <div class="enquiry-info__item">
+            <span aria-hidden="true">📝</span>
+            <div>
+              <strong>Fill in the form</strong>
+              <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.88rem;">Tell us your name, contact details, product type, quantity, and event date.</p>
+            </div>
           </div>
+
+          <div class="enquiry-info__item">
+            <span aria-hidden="true">📞</span>
+            <div>
+              <strong>We'll be in touch</strong>
+              <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.88rem;">We'll contact you within 24 hours to confirm your order and discuss any details.</p>
+            </div>
+          </div>
+
+          <div class="enquiry-info__item">
+            <span aria-hidden="true">🍰</span>
+            <div>
+              <strong>We start baking</strong>
+              <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.88rem;">Once confirmed, we get baking! Your order will be ready for collection or delivery on your selected date.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem; padding:1.2rem; background:rgba(255,255,255,0.1); border-radius:8px; font-size:0.88rem;">
+            <strong style="color:var(--golden-honey);">⏰ Please Note</strong>
+            <p style="margin:0.5rem 0 0; opacity:0.85;">
+              All custom cake orders require a minimum of <strong>5 business days</strong> notice. Standard orders (cupcakes, breads, pastries) require <strong>48 hours</strong> notice.
+            </p>
+          </div>
+
+          <div style="margin-top:1.5rem; font-size:0.88rem; opacity:0.85;">
+            <p>📞 012 000 0000</p>
+            <p>✉️ orders@lindissweetbakes.co.za</p>
+            <p>📍 12 Honey Lane, Arcadia, Pretoria</p>
+          </div>
+        </aside>
+
+        <!-- Right: Enquiry Form -->
+        <div class="form-card">
+          <h2 style="margin-bottom:0.3rem;">Custom Order Form</h2>
+          <p style="margin-bottom:2rem; font-size:0.92rem; opacity:0.8;">Fields marked with <span style="color:var(--golden-honey);">*</span> are required.</p>
+
+          <form id="enquiry-form" novalidate aria-label="Custom order enquiry form">
+
+            <!-- Row 1: Name + Email -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full-name"
+                  placeholder="e.g. Thandiwe Nkosi"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="e.g. thandiwe@email.com"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Row 2: Phone + Product Type -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span style="font-weight:400; opacity:0.65;">(optional)</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="e.g. 082 000 0000"
+                  autocomplete="tel"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="product-type">Product Type <span class="required" aria-hidden="true">*</span></label>
+                <select id="product-type" name="product-type" required aria-required="true">
+                  <option value="">-- Select a product --</option>
+                  <option value="custom-cake">Custom Cake</option>
+                  <option value="wedding-cake">Wedding Cake</option>
+                  <option value="cupcakes">Cupcakes</option>
+                  <option value="artisan-bread">Artisan Bread</option>
+                  <option value="pastries">Pastries</option>
+                  <option value="cookies">Cookies</option>
+                  <option value="brownies">Brownies</option>
+                  <option value="mixed">Mixed / Assorted</option>
+                  <option value="other">Other (specify below)</option>
+                </select>
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Row 3: Quantity + Event Date -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="quantity">Quantity <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  placeholder="e.g. 12"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="event-date">Event / Collection Date <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="date"
+                  id="event-date"
+                  name="event-date"
+                  required
+                  aria-required="true"
+                />
+                <span class="form-error-msg" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Delivery preference -->
+            <div class="form-group">
+              <label for="delivery">Delivery or Collection</label>
+              <select id="delivery" name="delivery">
+                <option value="">-- Please select --</option>
+                <option value="collection-arcadia">Collection — Arcadia Bakery</option>
+                <option value="collection-hatfield">Collection — Hatfield Market</option>
+                <option value="delivery">Delivery (Pretoria area)</option>
+              </select>
+            </div>
+
+            <!-- Special instructions -->
+            <div class="form-group">
+              <label for="special-instructions">Special Instructions / Message</label>
+              <textarea
+                id="special-instructions"
+                name="special-instructions"
+                placeholder="Please describe your order in detail. Include themes, colours, dietary requirements (e.g. nut-free, gluten-free), cake message, and any other special requests..."
+                rows="5"
+              ></textarea>
+            </div>
+
+            <p class="form-note">
+              We will respond to your enquiry within 24 hours on business days. For urgent orders, please call us directly on 012 000 0000.
+            </p>
+
+            <button type="submit" class="btn btn--primary" style="width:100%; font-size:1rem; padding:1rem;">
+              Submit Enquiry
+            </button>
+
+            <!-- Success / price response — populated by script.js -->
+            <div id="form-success" class="form-success" role="alert" aria-live="polite"></div>
+
+          </form>
         </div>
 
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li><a href="products.html">Custom Cakes</a></li>
-            <li><a href="products.html">Cupcakes</a></li>
-            <li><a href="products.html">Artisan Breads</a></li>
-            <li><a href="products.html">Pastries</a></li>
-            <li><a href="products.html">Cookies &amp; Brownies</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col footer-hours">
-          <h4>Trading Hours</h4>
-          <p>📍 Arcadia Bakery</p>
-          <p>Mon–Sat: 06:00 – 18:00</p>
-          <br />
-          <p>📍 Hatfield Market</p>
-          <p>Saturdays: 07:00 – 13:00</p>
-          <br />
-          <p>📞 012 000 0000</p>
-          <p>✉️ hello@lindissweetbakes.co.za</p>
-        </div>
-
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Main JavaScript (form validation lives in script.js) -->
-  <script src="js/script.js"></script>
+</main>
 
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
+        <p class="footer-brand__tagline">"To bring joy to every table."</p>
+        <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="products.html">Custom Cakes</a></li>
+          <li><a href="products.html">Cupcakes</a></li>
+          <li><a href="products.html">Artisan Breads</a></li>
+          <li><a href="products.html">Pastries</a></li>
+          <li><a href="products.html">Cookies &amp; Brownies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Trading Hours</h4>
+        <p>📍 Arcadia Bakery</p>
+        <p>Mon–Sat: 06:00 – 18:00</p>
+        <br />
+        <p>📍 Hatfield Market</p>
+        <p>Saturdays: 07:00 – 13:00</p>
+        <br />
+        <p>📞 012 000 0000</p>
+        <p>✉️ hello@lindissweetbakes.co.za</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
