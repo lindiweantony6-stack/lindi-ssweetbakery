@@ -107,7 +107,7 @@ lindi-ssweetbakery/
 ## Deployment
 
 The site is deployed on **Netlify** (free tier).  
-**Live URL:** *(update this after deploying)*
+**Live URL:** (https://lindis-sweet-bakery.netlify.app/
 
 To deploy manually:
 1. Push all files to GitHub (this repo)
@@ -115,7 +115,11 @@ To deploy manually:
 3. Click "Add new site" → "Import an existing project" → Connect to GitHub
 4. Select this repo → Deploy site
 5. Copy the generated URL and paste it here
+Live Website
 
+Netlify URL:https://lindis-sweet-bakery.netlify.app/ 
+
+The website has been successfully deployed using Netlify and is publicly accessible through the link above.
 ---
 
 ## Colour Scheme
