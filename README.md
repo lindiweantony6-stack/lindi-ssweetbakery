@@ -11,7 +11,7 @@
 
 Lindi's Sweet Bakes is a fictional artisan bakery based in Pretoria, Gauteng, South Africa. The website showcases the bakery's custom cakes, cupcakes, artisan breads, pastries, cookies and brownies. It was developed across three parts of the WEDE5020 module, with each part adding new features and improvements.
 
-**Live Site:** [Deploy link — see below after Netlify deployment]  
+**Live Site:** https://lindis-sweet-bakery.netlify.app/ 
 **GitHub Repo:** https://github.com/lindiweantony6-stack/lindi-ssweetbakery
 
 ---
