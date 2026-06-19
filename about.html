@@ -1,295 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ============================================================
-       Lindi's Sweet Bakes — About Us (about.html)
-       Student: Lindiwe Mthethwa | ST10129141
-       Module: WEDE5020
-       ============================================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn about Lindi's Sweet Bakes — our story, mission, vision, and the passionate baker behind every delicious creation in Pretoria." />
-  <title>About Us | Lindi's Sweet Bakes</title>
+<!-- ============================================================
+  Lindi's Sweet Bakes — About (about.html)
+  Student: Lindiwe Mthethwa | ST10129141
+  Module: WEDE5020 — Part 3
+============================================================ -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Learn about Lindi's Sweet Bakes — a boutique artisan bakery in Pretoria, Gauteng. Founded by Lindiwe Mthethwa, we bake handcrafted cakes, breads and pastries with local South African ingredients." />
+<meta name="keywords" content="about Lindi's Sweet Bakes, Pretoria artisan bakery, boutique bakery Gauteng, handcrafted cakes Pretoria, bakery story" />
+<meta name="robots" content="index, follow" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+<!-- Open Graph -->
+<meta property="og:title" content="About Us | Lindi's Sweet Bakes" />
+<meta property="og:description" content="Lindi's Sweet Bakes is a boutique artisan bakery in Pretoria. We bake custom cakes, breads and pastries with love and local ingredients." />
+<meta property="og:type" content="website" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+<!-- Canonical -->
+<link rel="canonical" href="https://lindissweetbakes.co.za/about.html" />
+
+<title>About Us | Lindi's Sweet Bakes — Pretoria Artisan Bakery</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Main stylesheet -->
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       SITE HEADER & NAVIGATION
-       ============================================================ -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
+<!-- SITE HEADER -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
+      <span class="nav__logo-icon" aria-hidden="true">🍰</span>
+      <span class="nav__logo-text">
+        Lindi's Sweet Bakes
+        <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
+      </span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
-      <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
-        <span class="nav__logo-icon" aria-hidden="true">🍰</span>
-        <span class="nav__logo-text">
-          Lindi's Sweet Bakes
-          <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
-        </span>
-      </a>
+<main>
 
-      <ul class="nav__links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="enquiry.html">Enquiry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Page header">
+    <h1>About Lindi's Sweet Bakes</h1>
+    <p>A boutique artisan bakery baking with love in Pretoria since 2020</p>
+  </section>
 
-      <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </nav>
-  </header>
-
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
-  <main>
-
-    <!-- --------------------------------------------------------
-         PAGE HERO
-         Banner header for the About Us page
-    -------------------------------------------------------- -->
-    <section class="page-hero" aria-label="Page header">
-      <h1>Our Story</h1>
-      <p>From a home kitchen to Pretoria's favourite artisan bakery</p>
-    </section>
-
-    <!-- --------------------------------------------------------
-         BAKERY ORIGIN STORY
-         Two-column layout: text left, image right
-    -------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <div class="about-story">
-
-          <!-- Text content -->
-          <div class="about-story__text">
-            <p class="section-subtitle">How It All Began</p>
-            <h2>A Passion Baked into Every Crumb</h2>
-            <div class="divider" style="margin-left:0;"></div>
-
-            <p>
-              Lindi's Sweet Bakes was born in a small kitchen in Arcadia, Pretoria, where founder Lindiwe Mthethwa first began baking custom cakes for family and friends. What started as a heartfelt hobby quickly turned into something much bigger, as word spread through the neighbourhood about her exceptional baked goods.
-            </p>
-            <p>
-              Fuelled by an unwavering love for the craft and a deep commitment to using only the finest locally sourced South African ingredients, Lindiwe turned her passion into a flourishing boutique bakery. Today, Lindi's Sweet Bakes is a beloved fixture in the Pretoria community, known for quality, creativity, and warmth in every product.
-            </p>
-            <p>
-              From beautifully crafted custom celebration cakes to freshly baked artisan sourdough breads and delicate pastries, every item that leaves our kitchen is made with intention, care, and a whole lot of love.
-            </p>
-
-            <a href="products.html" class="btn btn--primary">Explore Our Products</a>
-          </div>
-
-          <!-- Founder image placeholder -->
-          <div class="about-story__image">
-            <div class="about-story__img-placeholder" aria-label="Bakery interior image placeholder">
-              🍰
-            </div>
-            <!-- Circular badge overlay -->
-            <div class="about-story__badge" aria-label="Founded in 2020">
-              <strong>2020</strong>
-              Est.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         MISSION & VISION
-         Two equal cards displayed side by side
-    -------------------------------------------------------- -->
-    <section class="section section--beige">
-      <div class="container">
-        <p class="section-subtitle">What Drives Us</p>
-        <h2 class="section-title">Our Mission &amp; Vision</h2>
-        <div class="divider"></div>
-
-        <div class="mission-vision-grid">
-
-          <!-- Mission statement card -->
-          <div class="mv-card">
-            <div class="mv-card__icon" aria-hidden="true">🎯</div>
-            <h3>Our Mission</h3>
-            <p>
-              To bring joy to every table through lovingly crafted, fresh baked goods made with the finest local ingredients.
-            </p>
-            <p>
-              We believe every occasion — from a quiet weekday breakfast to a grand wedding celebration — deserves something truly special, made just for you.
-            </p>
-          </div>
-
-          <!-- Vision statement card -->
-          <div class="mv-card">
-            <div class="mv-card__icon" aria-hidden="true">🌟</div>
-            <h3>Our Vision</h3>
-            <p>
-              To become Pretoria's most trusted artisan bakery, recognised for quality, creativity, and warm community connections.
-            </p>
-            <p>
-              We aspire to grow alongside our community, remaining a local favourite while setting the standard for artisan baking in Gauteng.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         OUR VALUES
-         Three value pillars displayed as feature cards
-    -------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-        <p class="section-subtitle">What We Stand For</p>
-        <h2 class="section-title">Our Core Values</h2>
-        <div class="divider"></div>
-
-        <div class="features-grid">
-
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🌿</div>
-            <h3>Quality Ingredients</h3>
-            <p>We partner with trusted local farmers and suppliers to source fresh, seasonal ingredients — supporting South African producers and guaranteeing the best flavour in every bite.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">🤝</div>
-            <h3>Community Connection</h3>
-            <p>We are more than a bakery — we are a gathering place. From neighbourhood regulars to first-time visitors at our Hatfield market stall, every customer is treated like family.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">✨</div>
-            <h3>Creative Excellence</h3>
-            <p>Every custom order is an opportunity for creativity. We work closely with our customers to bring their vision to life — no request is too big, no detail too small.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         MEET THE BAKER
-         Founder profile card
-    -------------------------------------------------------- -->
-    <section class="section section--beige">
-      <div class="container">
-        <p class="section-subtitle">Behind the Apron</p>
-        <h2 class="section-title">Meet the Baker</h2>
-        <div class="divider"></div>
-
-        <!-- Baker profile card: avatar + bio -->
-        <div class="baker-card">
-
-          <!-- Avatar / profile image placeholder -->
-          <div class="baker-card__avatar" aria-label="Founder profile image placeholder">
-            👩🏾‍🍳
-          </div>
-
-          <!-- Founder information -->
-          <div class="baker-card__info">
-            <p class="baker-card__name">Lindiwe Mthethwa</p>
-            <p class="baker-card__title">Founder &amp; Head Baker</p>
-            <p>
-              Lindiwe's love affair with baking began in her grandmother's kitchen in Soweto, where she learned that food is the ultimate expression of love. After completing a pastry arts programme in Johannesburg, she returned to Pretoria with a vision: to create an artisan bakery that felt warm, welcoming, and deeply rooted in local community spirit.
-            </p>
-            <p>
-              With over six years of professional baking experience, Lindiwe specialises in custom celebration cakes and French-inspired pastries, drawing on both traditional South African flavours and modern European techniques to create something truly unique.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- --------------------------------------------------------
-         CTA BANNER
-    -------------------------------------------------------- -->
-    <section class="cta-banner" aria-label="Call to action">
-      <div class="container">
-        <h2>Let's Bake Something Beautiful Together</h2>
-        <p>Have a special occasion coming up? We'd love to be part of your celebration.</p>
-        <a href="enquiry.html" class="btn btn--outline">Place an Enquiry</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       SITE FOOTER
-       ============================================================ -->
-  <footer class="site-footer" aria-label="Site footer">
+  <!-- OUR STORY -->
+  <section class="section">
     <div class="container">
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
-          <p class="footer-brand__tagline">"To bring joy to every table."</p>
-          <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
-          <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="Instagram">📸</a>
-            <a href="#" class="social-link" aria-label="Facebook">📘</a>
-          </div>
+      <div class="about-grid">
+        <div class="about-image-placeholder" aria-label="Bakery interior photo placeholder">
+          <span aria-hidden="true">🍰</span>
         </div>
-
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <div>
+          <p class="section-subtitle">Our Story</p>
+          <h2 class="section-title">From a Home Kitchen to Pretoria's Favourite Bakery</h2>
+          <div class="divider"></div>
+          <p>Lindi's Sweet Bakes started in 2020 in a small home kitchen in Arcadia, Pretoria. What began as a passion for baking birthday cakes for family and friends quickly grew into a fully-fledged boutique bakery serving customers across Pretoria and Gauteng.</p>
+          <p>Our founder, Lindiwe, believed that every person deserved a beautifully handcrafted baked good made with real, quality ingredients — not mass-produced, not frozen, but made fresh with love every single day.</p>
+          <p>Today, Lindi's Sweet Bakes operates from our Arcadia bakery and the Hatfield Farmers Market every Saturday, serving hundreds of happy customers weekly.</p>
+          <a href="products.html" class="btn btn--primary" style="margin-top:0.5rem;">View Our Products</a>
         </div>
-
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li><a href="products.html">Custom Cakes</a></li>
-            <li><a href="products.html">Cupcakes</a></li>
-            <li><a href="products.html">Artisan Breads</a></li>
-            <li><a href="products.html">Pastries</a></li>
-            <li><a href="products.html">Cookies &amp; Brownies</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col footer-hours">
-          <h4>Trading Hours</h4>
-          <p>📍 Arcadia Bakery</p>
-          <p>Mon–Sat: 06:00 – 18:00</p>
-          <br />
-          <p>📍 Hatfield Market</p>
-          <p>Saturdays: 07:00 – 13:00</p>
-          <br />
-          <p>📞 012 000 0000</p>
-          <p>✉️ hello@lindissweetbakes.co.za</p>
-        </div>
-
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Main JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- OUR VALUES -->
+  <section class="section section--beige">
+    <div class="container">
+      <p class="section-subtitle">What We Stand For</p>
+      <h2 class="section-title">Our Values</h2>
+      <div class="divider"></div>
+      <div class="values-grid">
+        <div class="value-card">
+          <h4>🌿 Local First</h4>
+          <p>We source all our ingredients from trusted local South African suppliers to support our community and ensure freshness.</p>
+        </div>
+        <div class="value-card">
+          <h4>❤️ Made with Love</h4>
+          <p>Every item is handcrafted in small batches. We never mass-produce — every bake gets our full attention and care.</p>
+        </div>
+        <div class="value-card">
+          <h4>✨ Quality Always</h4>
+          <p>We use only real butter, free-range eggs, and premium flour. No shortcuts, no preservatives, no compromise.</p>
+        </div>
+        <div class="value-card">
+          <h4>🤝 Community</h4>
+          <p>We are proud to be part of the Pretoria community. We support local events, markets, and school fundraisers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-subtitle">By the Numbers</p>
+      <h2 class="section-title">Lindi's Sweet Bakes in Numbers</h2>
+      <div class="divider"></div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🎂</div>
+          <h3>500+</h3>
+          <p>Custom cakes delivered to happy customers across Pretoria and Gauteng.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">⭐</div>
+          <h3>4.9 / 5</h3>
+          <p>Average customer rating across Google and Facebook reviews.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">🍞</div>
+          <h3>6 Years</h3>
+          <p>Baking and serving the Pretoria community since 2020 with passion and consistency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="container">
+      <h2>Want to Work With Us?</h2>
+      <p>Whether it's a birthday, wedding, or corporate event — we'd love to bake for you.</p>
+      <a href="enquiry.html" class="btn btn--outline">Place an Enquiry</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
+        <p class="footer-brand__tagline">"To bring joy to every table."</p>
+        <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="products.html">Custom Cakes</a></li>
+          <li><a href="products.html">Cupcakes</a></li>
+          <li><a href="products.html">Artisan Breads</a></li>
+          <li><a href="products.html">Pastries</a></li>
+          <li><a href="products.html">Cookies &amp; Brownies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Trading Hours</h4>
+        <p>📍 Arcadia Bakery</p>
+        <p>Mon–Sat: 06:00 – 18:00</p>
+        <br />
+        <p>📍 Hatfield Market</p>
+        <p>Saturdays: 07:00 – 13:00</p>
+        <br />
+        <p>📞 012 000 0000</p>
+        <p>✉️ hello@lindissweetbakes.co.za</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
