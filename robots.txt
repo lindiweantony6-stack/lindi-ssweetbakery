@@ -6,4 +6,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://lindissweetbakes.co.za/sitemap.xml
-
