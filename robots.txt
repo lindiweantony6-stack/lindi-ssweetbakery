@@ -1,1 +1,9 @@
+# robots.txt — Lindi's Sweet Bakes
+# Instructs search engine crawlers which pages to index
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lindissweetbakes.co.za/sitemap.xml
 
