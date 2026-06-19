@@ -1,388 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ============================================================
-       Lindi's Sweet Bakes — Products (products.html)
-       Student: Lindiwe Mthethwa | ST10129141
-       Module: WEDE5020
-       ============================================================ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Browse Lindi's Sweet Bakes product range — custom cakes, cupcakes, artisan breads, pastries, cookies, and brownies. Order online from our Pretoria bakery." />
-  <title>Our Products | Lindi's Sweet Bakes</title>
+<!-- ============================================================
+  Lindi's Sweet Bakes — Products (products.html)
+  Student: Lindiwe Mthethwa | ST10129141
+  Module: WEDE5020 — Part 3
+============================================================ -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Browse Lindi's Sweet Bakes full product range — custom cakes, cupcakes, artisan breads, pastries, cookies and brownies. Handcrafted in Pretoria with local ingredients." />
+<meta name="keywords" content="custom cakes Pretoria, cupcakes Pretoria, artisan bread Pretoria, bakery products, wedding cake Pretoria, sourdough bread, pastries, brownies" />
+<title>Our Products | Lindi's Sweet Bakes — Artisan Bakery Pretoria</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+<!-- Open Graph SEO -->
+<meta property="og:title" content="Our Products | Lindi's Sweet Bakes" />
+<meta property="og:description" content="Custom cakes, cupcakes, artisan breads, pastries, cookies and brownies — handcrafted fresh in Pretoria." />
+<meta property="og:type" content="website" />
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       SITE HEADER & NAVIGATION
-       ============================================================ -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
+<!-- SITE HEADER -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
+      <span class="nav__logo-icon" aria-hidden="true">🍰</span>
+      <span class="nav__logo-text">
+        Lindi's Sweet Bakes
+        <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
+      </span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
 
-      <a href="index.html" class="nav__logo" aria-label="Lindi's Sweet Bakes — Home">
-        <span class="nav__logo-icon" aria-hidden="true">🍰</span>
-        <span class="nav__logo-text">
-          Lindi's Sweet Bakes
-          <span class="nav__logo-sub">Artisan Bakery · Pretoria</span>
-        </span>
-      </a>
+<main>
 
-      <ul class="nav__links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="enquiry.html">Enquiry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Page header">
+    <h1>Our Products</h1>
+    <p>Handcrafted with love · Baked fresh daily in Pretoria</p>
+  </section>
 
-      <button class="nav__burger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- PRODUCTS SECTION -->
+  <section class="section">
+    <div class="container">
 
-    </nav>
-  </header>
+      <p class="section-subtitle">Browse &amp; Order</p>
+      <h2 class="section-title">Everything We Bake</h2>
+      <div class="divider"></div>
 
-  <!-- ============================================================
-       MAIN CONTENT
-       ============================================================ -->
-  <main>
-
-    <!-- --------------------------------------------------------
-         PAGE HERO
-    -------------------------------------------------------- -->
-    <section class="page-hero" aria-label="Page header">
-      <h1>Our Products</h1>
-      <p>Handcrafted fresh daily — choose from our full range of baked goods</p>
-    </section>
-
-    <!-- --------------------------------------------------------
-         PRODUCTS SECTION
-         Filterable product grid with category buttons
-    -------------------------------------------------------- -->
-    <section class="section">
-      <div class="container">
-
-        <!-- Category filter bar -->
-        <!-- JavaScript (script.js) handles the filtering logic -->
-        <div class="filter-bar" role="group" aria-label="Filter products by category">
-          <button class="filter-btn active" data-filter="all">All Products</button>
+      <!-- Search + Filter Controls -->
+      <div class="products-controls" role="search" aria-label="Product search and filter">
+        <div class="product-search-wrap">
+          <label for="product-search" class="visually-hidden">Search products</label>
+          <input
+            type="search"
+            id="product-search"
+            placeholder="Search products... e.g. chocolate, sourdough"
+            aria-label="Search products"
+          />
+        </div>
+        <div class="filter-btns" role="group" aria-label="Filter by category">
+          <button class="filter-btn filter-btn--active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="cakes">🎂 Cakes</button>
           <button class="filter-btn" data-filter="cupcakes">🧁 Cupcakes</button>
           <button class="filter-btn" data-filter="breads">🍞 Breads</button>
           <button class="filter-btn" data-filter="pastries">🥐 Pastries</button>
-          <button class="filter-btn" data-filter="cookies">🍪 Cookies</button>
-          <button class="filter-btn" data-filter="brownies">🍫 Brownies</button>
+          <button class="filter-btn" data-filter="cookies">🍪 Cookies &amp; Brownies</button>
         </div>
-
-        <!-- ========== PRODUCT CARDS GRID ========== -->
-        <!-- Each card has a data-category attribute used by the JS filter -->
-        <div class="products-grid" id="products-grid">
-
-          <!-- ---- CAKES ---- -->
-
-          <!-- Product: Custom Celebration Cake -->
-          <article class="product-card" data-category="cakes" aria-label="Custom Celebration Cake">
-            <div class="product-card__image" aria-hidden="true">🎂</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cakes</p>
-              <h3 class="product-card__name">Custom Celebration Cake</h3>
-              <p class="product-card__desc">Designed to your vision — tiers, flavours, and decorations tailored for birthdays, weddings, and all special occasions.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R250</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Wedding Cake -->
-          <article class="product-card" data-category="cakes" aria-label="Wedding Cake">
-            <div class="product-card__image" aria-hidden="true">💍</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cakes</p>
-              <h3 class="product-card__name">Wedding Cake</h3>
-              <p class="product-card__desc">Elegant multi-tiered wedding cakes crafted to match your theme. Consultations available to plan your perfect cake.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R1 200</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Specialty Cake -->
-          <article class="product-card" data-category="cakes" aria-label="Specialty Drip Cake">
-            <div class="product-card__image" aria-hidden="true">🍫</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cakes</p>
-              <h3 class="product-card__name">Specialty Drip Cake</h3>
-              <p class="product-card__desc">Trendy drip-style cakes loaded with toppings — chocolate ganache, fresh berries, macarons, and more.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R380</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---- CUPCAKES ---- -->
-
-          <!-- Product: Standard Cupcakes -->
-          <article class="product-card" data-category="cupcakes" aria-label="Standard Cupcakes">
-            <div class="product-card__image" aria-hidden="true">🧁</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cupcakes</p>
-              <h3 class="product-card__name">Standard Cupcakes</h3>
-              <p class="product-card__desc">Classic vanilla, chocolate, red velvet, or lemon cupcakes topped with luscious buttercream. Available in boxes of 6 or 12.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R25 each</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Custom Cupcakes -->
-          <article class="product-card" data-category="cupcakes" aria-label="Custom Cupcakes">
-            <div class="product-card__image" aria-hidden="true">🌸</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cupcakes</p>
-              <h3 class="product-card__name">Custom Cupcakes</h3>
-              <p class="product-card__desc">Fully personalised cupcakes with themed toppers, custom colours, and your choice of flavour — ideal for events and parties.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R35 each</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---- BREADS ---- -->
-
-          <!-- Product: Sourdough Loaf -->
-          <article class="product-card" data-category="breads" aria-label="Sourdough Loaf">
-            <div class="product-card__image" aria-hidden="true">🍞</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Breads</p>
-              <h3 class="product-card__name">Sourdough Loaf</h3>
-              <p class="product-card__desc">Slow-fermented overnight, baked to a perfect golden crust with a soft, chewy crumb. A weekly market favourite.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R65</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Seed Loaf -->
-          <article class="product-card" data-category="breads" aria-label="Seeded Whole Wheat Loaf">
-            <div class="product-card__image" aria-hidden="true">🌾</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Breads</p>
-              <h3 class="product-card__name">Seeded Whole Wheat Loaf</h3>
-              <p class="product-card__desc">Packed with sunflower seeds, pumpkin seeds, and flaxseed on a whole wheat base. Nutritious and delicious.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R55</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Vetkoek -->
-          <article class="product-card" data-category="breads" aria-label="Traditional Vetkoek">
-            <div class="product-card__image" aria-hidden="true">🫓</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Breads</p>
-              <h3 class="product-card__name">Traditional Vetkoek</h3>
-              <p class="product-card__desc">A South African classic — golden-fried dough filled with your choice of mince, cheese, or jam. Available at the Hatfield market.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R45</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---- PASTRIES ---- -->
-
-          <!-- Product: Butter Croissant -->
-          <article class="product-card" data-category="pastries" aria-label="Butter Croissant">
-            <div class="product-card__image" aria-hidden="true">🥐</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Pastries</p>
-              <h3 class="product-card__name">Butter Croissant</h3>
-              <p class="product-card__desc">Flaky, buttery, and baked to a deep golden colour. Made with real South African butter and layered to perfection.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R30</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Filled Doughnut -->
-          <article class="product-card" data-category="pastries" aria-label="Filled Doughnut">
-            <div class="product-card__image" aria-hidden="true">🍩</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Pastries</p>
-              <h3 class="product-card__name">Filled Doughnut</h3>
-              <p class="product-card__desc">Pillowy soft, fried to perfection and filled with vanilla custard, strawberry jam, or Nutella. Available weekends.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R28</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---- COOKIES ---- -->
-
-          <!-- Product: Choc Chip Cookies -->
-          <article class="product-card" data-category="cookies" aria-label="Chocolate Chip Cookies">
-            <div class="product-card__image" aria-hidden="true">🍪</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cookies</p>
-              <h3 class="product-card__name">Chocolate Chip Cookies</h3>
-              <p class="product-card__desc">Thick, chewy, and loaded with dark chocolate chips. A timeless classic made with real butter and pure vanilla.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R15 each</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Shortbread -->
-          <article class="product-card" data-category="cookies" aria-label="Scottish Shortbread">
-            <div class="product-card__image" aria-hidden="true">🌼</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Cookies</p>
-              <h3 class="product-card__name">Butter Shortbread</h3>
-              <p class="product-card__desc">Melt-in-your-mouth, crumbly shortbread biscuits. Perfect as a gift or alongside afternoon tea. Sold in boxes of 12.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R120 per box</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- ---- BROWNIES ---- -->
-
-          <!-- Product: Classic Fudge Brownie -->
-          <article class="product-card" data-category="brownies" aria-label="Classic Fudge Brownie">
-            <div class="product-card__image" aria-hidden="true">🍫</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Brownies</p>
-              <h3 class="product-card__name">Classic Fudge Brownie</h3>
-              <p class="product-card__desc">Dense, rich, and impossibly fudgy. Made with premium dark chocolate and no shortcuts. A cult favourite at the market.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R20 each</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product: Caramel Pecan Brownie -->
-          <article class="product-card" data-category="brownies" aria-label="Caramel Pecan Brownie">
-            <div class="product-card__image" aria-hidden="true">🍯</div>
-            <div class="product-card__body">
-              <p class="product-card__category">Brownies</p>
-              <h3 class="product-card__name">Caramel Pecan Brownie</h3>
-              <p class="product-card__desc">Our classic fudge brownie swirled with salted caramel and topped with toasted pecans. A real showstopper.</p>
-              <div class="product-card__footer">
-                <span class="product-card__price">From R28 each</span>
-                <a href="enquiry.html" class="product-card__link">Enquire →</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-        <!-- END products-grid -->
-
-        <!-- Custom order prompt -->
-        <div style="text-align:center; margin-top: 3.5rem;">
-          <p style="margin-bottom:1.2rem; font-size:1rem; color: var(--text-body);">
-            Don't see exactly what you need? We love custom orders — get in touch!
-          </p>
-          <a href="enquiry.html" class="btn btn--primary">Enquire About a Custom Order</a>
-        </div>
-
       </div>
-    </section>
 
-    <!-- --------------------------------------------------------
-         CTA BANNER
-    -------------------------------------------------------- -->
-    <section class="cta-banner" aria-label="Call to action">
-      <div class="container">
-        <h2>Something Catching Your Eye?</h2>
-        <p>All orders placed at least 48 hours in advance. Delivery available across Pretoria.</p>
-        <a href="enquiry.html" class="btn btn--outline">Place an Order Enquiry</a>
+      <!-- Dynamic Product Grid — populated by script.js -->
+      <div id="products-grid" aria-live="polite" aria-label="Product listings">
+        <p style="text-align:center; padding: 3rem; color: var(--text-light);">Loading products...</p>
       </div>
-    </section>
 
-  </main>
+    </div>
+  </section>
 
-  <!-- ============================================================
-       SITE FOOTER
-       ============================================================ -->
-  <footer class="site-footer" aria-label="Site footer">
+  <!-- GALLERY LIGHTBOX SECTION -->
+  <section class="section section--beige">
     <div class="container">
-      <div class="footer-grid">
+      <p class="section-subtitle">Gallery</p>
+      <h2 class="section-title">Baked With Love</h2>
+      <div class="divider"></div>
+      <p style="margin-bottom:2rem; color: var(--text-light);">Click any image to view it in full size.</p>
 
-        <div class="footer-brand">
-          <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
-          <p class="footer-brand__tagline">"To bring joy to every table."</p>
-          <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
-          <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="Instagram">📸</a>
-            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+      <div class="gallery-grid" role="list" aria-label="Bakery gallery">
+        <div class="gallery-item" role="listitem">
+          <img
+            src="images/cakes/birthday-cake.jpg"
+            alt="Custom birthday cake with pink buttercream roses"
+            data-full="images/cakes/birthday-cake.jpg"
+            data-caption="Custom birthday cake — pink buttercream roses"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>🎂</span><p style=\'font-size:0.8rem;margin-top:0.5rem\'>Birthday Cake</p>'"
+          />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img
+            src="images/cakes/wedding-cake.jpg"
+            alt="Elegant three-tier white fondant wedding cake"
+            data-full="images/cakes/wedding-cake.jpg"
+            data-caption="Elegant 3-tier fondant wedding cake"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>💍</span><p style=\'font-size:0.8rem;margin-top:0.5rem\'>Wedding Cake</p>'"
+          />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img
+            src="images/cupcakes/vanilla-cupcakes.jpg"
+            alt="Dozen vanilla buttercream cupcakes on a display stand"
+            data-full="images/cupcakes/vanilla-cupcakes.jpg"
+            data-caption="Vanilla buttercream cupcakes"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>🧁</span><p style=\'font-size:0.8rem;margin-top:0.5rem\'>Vanilla Cupcakes</p>'"
+          />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img
+            src="images/breads/sourdough-boule.jpg"
+            alt="Golden sourdough boule loaf with flour dusting"
+            data-full="images/breads/sourdough-boule.jpg"
+            data-caption="Sourdough boule — slow fermented 24 hours"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>🍞</span><p style=\'font-size:0.8rem;margin-top:0.5rem\'>Sourdough Boule</p>'"
+          />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img
+            src="images/pastries/butter-croissants.jpg"
+            alt="Fresh flaky butter croissants on a wooden board"
+            data-full="images/pastries/butter-croissants.jpg"
+            data-caption="Freshly baked butter croissants"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>🥐</span><p style=\'font-size:0.8rem;margin-top:0.5rem\'>Butter Croissants</p>'"
+          />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img
+            src="images/brownies/fudgy-brownies.jpg"
+            alt="Stack of fudgy triple chocolate brownies"
+            data-full="images/brownies/fudgy-brownies.jpg"
+            data-caption="Fudgy triple-chocolate brownies"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:4rem\'>🍫</span><p style=\'font-size:0.8rem;margin-top:0.5rem\'>Fudgy Brownies</p>'"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <p class="section-subtitle">FAQ</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="divider"></div>
+
+      <div class="accordion" role="list">
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__header" aria-expanded="false">How far in advance must I order?</button>
+          <div class="accordion__body">
+            <div class="accordion__body-inner">
+              Custom cakes require a minimum of <strong>5 business days</strong> notice. Standard items like cupcakes, breads and pastries need <strong>48 hours</strong> notice. For large event orders (weddings, corporate events), we recommend <strong>2–3 weeks</strong> in advance.
+            </div>
           </div>
         </div>
 
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__header" aria-expanded="false">Do you cater for dietary requirements?</button>
+          <div class="accordion__body">
+            <div class="accordion__body-inner">
+              Yes! We offer <strong>gluten-free</strong>, <strong>nut-free</strong>, and <strong>dairy-free</strong> options on most products. Please specify your dietary requirements in the special instructions field on the enquiry form and we will confirm availability.
+            </div>
+          </div>
         </div>
 
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li><a href="products.html">Custom Cakes</a></li>
-            <li><a href="products.html">Cupcakes</a></li>
-            <li><a href="products.html">Artisan Breads</a></li>
-            <li><a href="products.html">Pastries</a></li>
-            <li><a href="products.html">Cookies &amp; Brownies</a></li>
-          </ul>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__header" aria-expanded="false">Do you deliver?</button>
+          <div class="accordion__body">
+            <div class="accordion__body-inner">
+              We offer delivery across Pretoria (Arcadia, Hatfield, Brooklyn, Menlyn, Centurion and surrounding areas). Delivery fees vary by distance. Alternatively, you can collect from our bakery in <strong>Arcadia</strong> (Mon–Sat 06:00–18:00) or the <strong>Hatfield Farmers Market</strong> (Saturdays 07:00–13:00).
+            </div>
+          </div>
         </div>
 
-        <div class="footer-col footer-hours">
-          <h4>Trading Hours</h4>
-          <p>📍 Arcadia Bakery</p>
-          <p>Mon–Sat: 06:00 – 18:00</p>
-          <br />
-          <p>📍 Hatfield Market</p>
-          <p>Saturdays: 07:00 – 13:00</p>
-          <br />
-          <p>📞 012 000 0000</p>
-          <p>✉️ hello@lindissweetbakes.co.za</p>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__header" aria-expanded="false">What payment methods do you accept?</button>
+          <div class="accordion__body">
+            <div class="accordion__body-inner">
+              We accept <strong>EFT bank transfer</strong>, <strong>SnapScan</strong>, and <strong>cash on collection</strong>. A 50% deposit is required to confirm custom cake orders. Full payment is due before delivery or collection.
+            </div>
+          </div>
         </div>
 
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+        <div class="accordion__item" role="listitem">
+          <button class="accordion__header" aria-expanded="false">Can I provide a design reference for my cake?</button>
+          <div class="accordion__body">
+            <div class="accordion__body-inner">
+              Absolutely! When you submit an enquiry, you can describe your design in the special instructions field. You are also welcome to email reference photos to <a href="mailto:orders@lindissweetbakes.co.za">orders@lindissweetbakes.co.za</a> and we will do our best to recreate your vision.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Main JavaScript (filter logic lives in script.js) -->
-  <script src="js/script.js"></script>
+  <!-- CTA -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="container">
+      <h2>Ready to Order?</h2>
+      <p>Fill in our quick enquiry form and we will get back to you within 24 hours.</p>
+      <a href="enquiry.html" class="btn btn--outline">Place an Enquiry</a>
+    </div>
+  </section>
 
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">🍰 Lindi's Sweet Bakes</p>
+        <p class="footer-brand__tagline">"To bring joy to every table."</p>
+        <p>Boutique artisan bakery based in Pretoria, Gauteng. Baking with love since 2020.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="products.html">Custom Cakes</a></li>
+          <li><a href="products.html">Cupcakes</a></li>
+          <li><a href="products.html">Artisan Breads</a></li>
+          <li><a href="products.html">Pastries</a></li>
+          <li><a href="products.html">Cookies &amp; Brownies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-hours">
+        <h4>Trading Hours</h4>
+        <p>📍 Arcadia Bakery</p>
+        <p>Mon–Sat: 06:00 – 18:00</p>
+        <br />
+        <p>📍 Hatfield Market</p>
+        <p>Saturdays: 07:00 – 13:00</p>
+        <br />
+        <p>📞 012 000 0000</p>
+        <p>✉️ hello@lindissweetbakes.co.za</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lindi's Sweet Bakes, Pretoria. All rights reserved. | Designed by Lindiwe Mthethwa (ST10129141) — WEDE5020</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
